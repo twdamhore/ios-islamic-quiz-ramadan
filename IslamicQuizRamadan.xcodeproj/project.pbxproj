@@ -17,6 +17,7 @@
 		DDF6898CA0DEE7726C901290 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE99E7465718BE65404965 /* Bundle+Decode.swift */; };
 		EF421FAB2215B85DAAE77656 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500514CA8ABE76CEEBA0565 /* Question.swift */; };
 		F843BF0E7A8604BFD0EA134B /* IslamicQuizRamadanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5AF24343CCA7645DFB369 /* IslamicQuizRamadanApp.swift */; };
+		B1D8F2A4C6E3950A7D1B3F8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A8E1C3F7B2D9E5A6F0C8D1B /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +25,6 @@
 		1EDE99E7465718BE65404965 /* Bundle+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		286820DD2F69AFC348849C88 /* Error */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Error; path = IslamicQuizRamadan/Views/Error; sourceTree = SOURCE_ROOT; };
 		429B59AF9C287C5DCF2786F4 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = IslamicQuizRamadan/Views/Game; sourceTree = SOURCE_ROOT; };
-		4765E3E946769AD2F8140EBF /* Launch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Launch; path = IslamicQuizRamadan/Views/Launch; sourceTree = SOURCE_ROOT; };
 		5EC20CE11955E31C5867860C /* ScoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRecord.swift; sourceTree = "<group>"; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		71A6E2062FF120C40AB9B349 /* Leaderboard */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Leaderboard; path = IslamicQuizRamadan/Views/Leaderboard; sourceTree = SOURCE_ROOT; };
@@ -41,6 +41,7 @@
 		DA8B8DFE223EDA8F87C9E27B /* IslamicQuizRamadan.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IslamicQuizRamadan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1E68CFA48E1A2C1D64245A /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ViewModels; path = IslamicQuizRamadan/ViewModels; sourceTree = SOURCE_ROOT; };
 		F775A23004525A49C372EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4A8E1C3F7B2D9E5A6F0C8D1B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -80,9 +81,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2F3A4B5C6D7E8F9A0B1C2D3E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E1C3F7B2D9E5A6F0C8D1B /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		4689C2D4C7A60C14ACB8180F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F3A4B5C6D7E8F9A0B1C2D3E /* Launch */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,7 +125,6 @@
 				06AE88842AC347EBE103AE0B /* Components */,
 				286820DD2F69AFC348849C88 /* Error */,
 				429B59AF9C287C5DCF2786F4 /* Game */,
-				4765E3E946769AD2F8140EBF /* Launch */,
 				71A6E2062FF120C40AB9B349 /* Leaderboard */,
 				AD9B111EDF2FB9EDFC8CC02D /* Services */,
 				BE31DBA62EAA1CD49784916A /* Settings */,
@@ -187,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570E322C1942F2BDB7E2250C /* Assets.xcassets in Resources */,
+				B1D8F2A4C6E3950A7D1B3F8E /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +231,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -308,7 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -21,7 +21,6 @@ targets:
       # navigator. Remove each entry once the folder contains source files
       # (XcodeGen auto-discovers them from the main sources path above).
       - { path: IslamicQuizRamadan/ViewModels, buildPhase: none, type: folder, optional: true }
-      - { path: IslamicQuizRamadan/Views/Launch, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Game, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Leaderboard, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Settings, buildPhase: none, type: folder, optional: true }
@@ -32,7 +31,7 @@ targets:
       - { path: IslamicQuizRamadan/Resources/Sounds, buildPhase: none, type: folder, optional: true }
     settings:
       base:
-        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
         INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown"
         SWIFT_VERSION: "5.9"
