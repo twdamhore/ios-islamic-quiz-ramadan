@@ -1,0 +1,18 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": 1,
+      "text": "First question?",
+      "options": ["A", "B", "C", "D", "E"],
+      "correctOptionIndex": 0
+    },
+    {
+      "id": 1,
+      "level": 2,
+      "text": "Second question with same ID?",
+      "options": ["A", "B", "C", "D", "E"],
+      "correctOptionIndex": 1
+    }
+  ]
+}

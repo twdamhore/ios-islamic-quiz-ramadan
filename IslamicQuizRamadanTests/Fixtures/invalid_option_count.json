@@ -1,0 +1,11 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": 1,
+      "text": "Question with too few options?",
+      "options": ["A", "B", "C"],
+      "correctOptionIndex": 0
+    }
+  ]
+}
