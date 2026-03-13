@@ -3,6 +3,7 @@ import Foundation
 struct ScoreRecord: Identifiable, Codable, Comparable {
     let id: UUID
     let playerID: UUID
+    /// Denormalized from Player — intentionally not updated if the player renames.
     let playerName: String
     let totalCorrect: Int
     let completionTimeSeconds: TimeInterval
