@@ -22,7 +22,7 @@ struct StorageService {
             return .failure(.emptyPlayerName)
         }
 
-        guard trimmed.count <= 20 else {
+        guard trimmed.count <= AppConstants.maxPlayerNameLength else {
             return .failure(.playerNameTooLong(trimmed.count))
         }
 
@@ -61,8 +61,10 @@ struct StorageService {
     // MARK: - Private
 
     private func savePlayers(_ players: [Player]) {
-        if let data = try? JSONEncoder().encode(players) {
-            defaults.set(data, forKey: Keys.players)
+        guard let data = try? JSONEncoder().encode(players) else {
+            assertionFailure("Failed to encode players")
+            return
         }
+        defaults.set(data, forKey: Keys.players)
     }
 }
