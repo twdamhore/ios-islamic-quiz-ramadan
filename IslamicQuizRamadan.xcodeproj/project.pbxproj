@@ -15,11 +15,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06AE88842AC347EBE103AE0B /* Components */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Components; path = IslamicQuizRamadan/Views/Components; sourceTree = SOURCE_ROOT; };
 		1EDE99E7465718BE65404965 /* Bundle+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
+		286820DD2F69AFC348849C88 /* Error */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Error; path = IslamicQuizRamadan/Views/Error; sourceTree = SOURCE_ROOT; };
+		429B59AF9C287C5DCF2786F4 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = IslamicQuizRamadan/Views/Game; sourceTree = SOURCE_ROOT; };
+		4765E3E946769AD2F8140EBF /* Launch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Launch; path = IslamicQuizRamadan/Views/Launch; sourceTree = SOURCE_ROOT; };
+		55C4A55AD06A238D843CB3E1 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Models; path = IslamicQuizRamadan/Models; sourceTree = SOURCE_ROOT; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		71A6E2062FF120C40AB9B349 /* Leaderboard */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Leaderboard; path = IslamicQuizRamadan/Views/Leaderboard; sourceTree = SOURCE_ROOT; };
+		72A846494E1186B987CB3CCA /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = IslamicQuizRamadan/Resources/Sounds; sourceTree = SOURCE_ROOT; };
+		748EC8F88AEB2D51431C0FC1 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Theme; path = IslamicQuizRamadan/Theme; sourceTree = SOURCE_ROOT; };
 		8DF5AF24343CCA7645DFB369 /* IslamicQuizRamadanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslamicQuizRamadanApp.swift; sourceTree = "<group>"; };
 		8FCEA3B8AE954BCCB47F5E19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD9B111EDF2FB9EDFC8CC02D /* Services */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Services; path = IslamicQuizRamadan/Services; sourceTree = SOURCE_ROOT; };
+		BE31DBA62EAA1CD49784916A /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Settings; path = IslamicQuizRamadan/Views/Settings; sourceTree = SOURCE_ROOT; };
 		DA8B8DFE223EDA8F87C9E27B /* IslamicQuizRamadan.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IslamicQuizRamadan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE1E68CFA48E1A2C1D64245A /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ViewModels; path = IslamicQuizRamadan/ViewModels; sourceTree = SOURCE_ROOT; };
 		F775A23004525A49C372EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +90,17 @@
 		FBFF160934F5529CE635C464 = {
 			isa = PBXGroup;
 			children = (
+				06AE88842AC347EBE103AE0B /* Components */,
+				286820DD2F69AFC348849C88 /* Error */,
+				429B59AF9C287C5DCF2786F4 /* Game */,
+				4765E3E946769AD2F8140EBF /* Launch */,
+				71A6E2062FF120C40AB9B349 /* Leaderboard */,
+				55C4A55AD06A238D843CB3E1 /* Models */,
+				AD9B111EDF2FB9EDFC8CC02D /* Services */,
+				BE31DBA62EAA1CD49784916A /* Settings */,
+				72A846494E1186B987CB3CCA /* Sounds */,
+				748EC8F88AEB2D51431C0FC1 /* Theme */,
+				EE1E68CFA48E1A2C1D64245A /* ViewModels */,
 				AD62CE4B35CDDE6610DCA8BB /* IslamicQuizRamadan */,
 				3E91F4B15A0FAEA4DE26D3F9 /* Products */,
 			);
