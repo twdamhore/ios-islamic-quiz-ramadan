@@ -20,7 +20,6 @@ targets:
       # Folder references for empty directories so they appear in Xcode's
       # navigator. Remove each entry once the folder contains source files
       # (XcodeGen auto-discovers them from the main sources path above).
-      - { path: IslamicQuizRamadan/Models, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/ViewModels, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Launch, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Game, buildPhase: none, type: folder, optional: true }
