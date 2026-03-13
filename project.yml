@@ -21,7 +21,7 @@ targets:
       # navigator. Remove each entry once the folder contains source files
       # (XcodeGen auto-discovers them from the main sources path above).
       - { path: IslamicQuizRamadan/ViewModels, buildPhase: none, type: folder, optional: true }
-- { path: IslamicQuizRamadan/Views/Game, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Game, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Leaderboard, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Settings, buildPhase: none, type: folder, optional: true }
       - { path: IslamicQuizRamadan/Views/Error, buildPhase: none, type: folder, optional: true }
