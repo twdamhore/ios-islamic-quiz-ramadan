@@ -34,6 +34,10 @@ struct QuestionLoader {
                 return .failure(.duplicateQuestionID(q.id))
             }
 
+            guard q.text.count <= 120 else {
+                return .failure(.questionTextTooLong(questionID: q.id, length: q.text.count, maxLength: 120))
+            }
+
             guard q.options.count == 5 else {
                 return .failure(.invalidOptionCount(questionID: q.id, count: q.options.count))
             }

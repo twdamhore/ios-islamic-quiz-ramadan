@@ -42,6 +42,13 @@ struct QuestionBankTests {
         #expect(Set(ids).count == ids.count)
     }
 
+    @Test("All question texts are at most 120 characters")
+    func questionTextLength() {
+        for question in questions {
+            #expect(question.text.count <= 120, "Question \(question.id) text is \(question.text.count) characters")
+        }
+    }
+
     @Test("Levels 1 through 10 each have exactly 10 questions")
     func levelCoverage() {
         let levels = Set(questions.map(\.level))
