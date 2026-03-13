@@ -25,7 +25,6 @@
 		1EDE99E7465718BE65404965 /* Bundle+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		286820DD2F69AFC348849C88 /* Error */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Error; path = IslamicQuizRamadan/Views/Error; sourceTree = SOURCE_ROOT; };
 		429B59AF9C287C5DCF2786F4 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = IslamicQuizRamadan/Views/Game; sourceTree = SOURCE_ROOT; };
-		4765E3E946769AD2F8140EBF /* Launch */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Launch; path = IslamicQuizRamadan/Views/Launch; sourceTree = SOURCE_ROOT; };
 		5EC20CE11955E31C5867860C /* ScoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRecord.swift; sourceTree = "<group>"; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		71A6E2062FF120C40AB9B349 /* Leaderboard */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Leaderboard; path = IslamicQuizRamadan/Views/Leaderboard; sourceTree = SOURCE_ROOT; };
@@ -82,9 +81,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2F3A4B5C6D7E8F9A0B1C2D3E /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				4A8E1C3F7B2D9E5A6F0C8D1B /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		4689C2D4C7A60C14ACB8180F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2F3A4B5C6D7E8F9A0B1C2D3E /* Launch */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,7 +102,6 @@
 			children = (
 				EDB561C1715281E5E5B4C73E /* App */,
 				1BECF5B060ECE889D92600D6 /* Extensions */,
-				4A8E1C3F7B2D9E5A6F0C8D1B /* LaunchScreen.storyboard */,
 				0ED7B97E62502CA1C87AC85F /* Models */,
 				1F10099BBC6B19FE3C7039A1 /* Resources */,
 				4689C2D4C7A60C14ACB8180F /* Views */,
@@ -118,7 +125,6 @@
 				06AE88842AC347EBE103AE0B /* Components */,
 				286820DD2F69AFC348849C88 /* Error */,
 				429B59AF9C287C5DCF2786F4 /* Game */,
-				4765E3E946769AD2F8140EBF /* Launch */,
 				71A6E2062FF120C40AB9B349 /* Leaderboard */,
 				AD9B111EDF2FB9EDFC8CC02D /* Services */,
 				BE31DBA62EAA1CD49784916A /* Settings */,
