@@ -58,6 +58,23 @@ struct StorageService {
         return .success(())
     }
 
+    // MARK: - Score Persistence
+
+    func saveScore(_ score: ScoreRecord) {
+        var scores = listScores()
+        scores.append(score)
+        scores.sort(by: >)
+        if scores.count > AppConstants.maxScores {
+            scores = Array(scores.prefix(AppConstants.maxScores))
+        }
+        saveScores(scores)
+    }
+
+    func listScores() -> [ScoreRecord] {
+        guard let data = defaults.data(forKey: Keys.scores) else { return [] }
+        return (try? JSONDecoder().decode([ScoreRecord].self, from: data)) ?? []
+    }
+
     // MARK: - Private
 
     private func savePlayers(_ players: [Player]) {
@@ -66,5 +83,13 @@ struct StorageService {
             return
         }
         defaults.set(data, forKey: Keys.players)
+    }
+
+    private func saveScores(_ scores: [ScoreRecord]) {
+        guard let data = try? JSONEncoder().encode(scores) else {
+            assertionFailure("Failed to encode scores")
+            return
+        }
+        defaults.set(data, forKey: Keys.scores)
     }
 }
