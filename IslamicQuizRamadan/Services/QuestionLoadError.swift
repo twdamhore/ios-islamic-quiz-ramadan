@@ -7,4 +7,5 @@ enum QuestionLoadError: Error, Equatable {
     case duplicateOptionText(questionID: Int, option: String)
     case duplicateQuestionID(Int)
     case correctOptionIndexOutOfBounds(questionID: Int, index: Int, optionCount: Int)
+    case questionTextTooLong(questionID: Int, length: Int, maxLength: Int)
 }

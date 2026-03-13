@@ -1,0 +1,11 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": 1,
+      "text": "This is an extremely long question text that is designed to exceed the one hundred and twenty character limit for question text validation testing purposes here",
+      "options": ["Alpha", "Bravo", "Charlie", "Delta", "Echo"],
+      "correctOptionIndex": 0
+    }
+  ]
+}
