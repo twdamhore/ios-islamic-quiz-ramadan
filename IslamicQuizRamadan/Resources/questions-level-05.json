@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 41,
+      "level": 5,
+      "text": "In which year of the Hijri calendar was fasting during Ramadan made obligatory?",
+      "options": ["1 AH", "2 AH", "3 AH", "5 AH", "8 AH"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 42,
+      "level": 5,
+      "text": "Which month in the Islamic calendar comes immediately after Ramadan?",
+      "options": ["Rajab", "Sha'ban", "Shawwal", "Muharram", "Dhul Qi'dah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 43,
+      "level": 5,
+      "text": "What is the spiritual retreat in the mosque during the last 10 days of Ramadan called?",
+      "options": ["Dhikr", "I'tikaf", "Tawbah", "Khutbah", "Ijma"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 44,
+      "level": 5,
+      "text": "Which surah is known as the 'Heart of the Quran'?",
+      "options": ["Al-Fatiha", "Al-Baqarah", "Ya-Sin", "Ar-Rahman", "Al-Mulk"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 45,
+      "level": 5,
+      "text": "What percentage of savings is typically given as Zakat?",
+      "options": ["1%", "2.5%", "5%", "10%", "15%"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 46,
+      "level": 5,
+      "text": "In which city was Prophet Muhammad born?",
+      "options": ["Medina", "Mecca", "Taif", "Jerusalem", "Damascus"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 47,
+      "level": 5,
+      "text": "How many rakats are in the Fajr (dawn) prayer?",
+      "options": ["Two", "Three", "Four", "Five", "Six"],
+      "correctOptionIndex": 0
+    },
+    {
+      "id": 48,
+      "level": 5,
+      "text": "What does 'Ramadan Mubarak' mean?",
+      "options": ["Happy Ramadan", "Generous Ramadan", "Blessed Ramadan", "Holy Ramadan", "Peaceful Ramadan"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 49,
+      "level": 5,
+      "text": "Which month comes immediately before Ramadan in the Islamic calendar?",
+      "options": ["Rajab", "Sha'ban", "Jumada al-Thani", "Muharram", "Safar"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 50,
+      "level": 5,
+      "text": "What is the name of the charitable endowment in Islam?",
+      "options": ["Zakat", "Sadaqah", "Waqf", "Khums", "Fitrah"],
+      "correctOptionIndex": 2
+    }
+  ]
+}

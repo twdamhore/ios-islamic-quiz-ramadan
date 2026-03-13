@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 11,
+      "level": 2,
+      "text": "How many times a day are Muslims required to pray?",
+      "options": ["Three", "Four", "Five", "Six", "Seven"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 12,
+      "level": 2,
+      "text": "What do Muslims say before starting a good action?",
+      "options": ["Subhan'Allah", "Alhamdulillah", "Bismillah", "Astaghfirullah", "Masha'Allah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 13,
+      "level": 2,
+      "text": "What does the word 'Islam' mean?",
+      "options": ["Peace", "Submission to God", "Love", "Knowledge", "Unity"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 14,
+      "level": 2,
+      "text": "During Ramadan, Muslims fast from when to when?",
+      "options": ["Sunrise to sunset", "Dawn to sunset", "Midnight to noon", "Dawn to midnight", "Sunrise to midnight"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 15,
+      "level": 2,
+      "text": "What is the name of the angel who delivered revelations to Prophet Muhammad?",
+      "options": ["Mikail", "Israfil", "Jibreel", "Azrael", "Malik"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 16,
+      "level": 2,
+      "text": "How many chapters (surahs) does the Quran have?",
+      "options": ["99", "110", "114", "120", "124"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 17,
+      "level": 2,
+      "text": "What is the direction Muslims face during prayer called?",
+      "options": ["Mihrab", "Minbar", "Qiblah", "Minaret", "Musallah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 18,
+      "level": 2,
+      "text": "Which day of the week is special for congregational prayer in Islam?",
+      "options": ["Sunday", "Monday", "Wednesday", "Friday", "Saturday"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 19,
+      "level": 2,
+      "text": "What do Muslims say to express gratitude to God?",
+      "options": ["Bismillah", "Astaghfirullah", "Subhan'Allah", "Alhamdulillah", "Allahu Akbar"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 20,
+      "level": 2,
+      "text": "What is the second pillar of Islam after the Shahada?",
+      "options": ["Zakat", "Salah", "Sawm", "Hajj", "Jihad"],
+      "correctOptionIndex": 1
+    }
+  ]
+}

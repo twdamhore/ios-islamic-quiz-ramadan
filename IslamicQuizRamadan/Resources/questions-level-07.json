@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 61,
+      "level": 7,
+      "text": "What is the pre-dawn meal eaten before beginning the fast called?",
+      "options": ["Iftar", "Suhoor", "Walimah", "Aqeeqah", "Tharid"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 62,
+      "level": 7,
+      "text": "In which cave did Prophet Muhammad receive the first revelation?",
+      "options": ["Cave of Thawr", "Cave of Hira", "Cave of Uhud", "Cave of Mina", "Cave of Badr"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 63,
+      "level": 7,
+      "text": "How many years did it take for the Quran to be fully revealed?",
+      "options": ["10 years", "15 years", "20 years", "23 years", "25 years"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 64,
+      "level": 7,
+      "text": "What is the name of the treaty signed between Muslims and Quraysh in 6 AH?",
+      "options": ["Treaty of Aqaba", "Treaty of Hudaybiyyah", "Treaty of Medina", "Treaty of Tabuk", "Treaty of Mecca"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 65,
+      "level": 7,
+      "text": "Which prophet is known for his extraordinary patience in the Quran?",
+      "options": ["Yusuf", "Musa", "Ayyub", "Ibrahim", "Nuh"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 66,
+      "level": 7,
+      "text": "What is the name of the Prophet's mosque in Medina?",
+      "options": ["Masjid al-Haram", "Masjid an-Nabawi", "Masjid al-Aqsa", "Masjid Quba", "Masjid al-Qiblatayn"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 67,
+      "level": 7,
+      "text": "Which angel is responsible for blowing the trumpet on the Day of Judgment?",
+      "options": ["Jibreel", "Mikail", "Israfil", "Azrael", "Malik"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 68,
+      "level": 7,
+      "text": "What is the term for the consensus of Islamic scholars on a ruling?",
+      "options": ["Ijtihad", "Qiyas", "Ijma", "Fatwa", "Fiqh"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 69,
+      "level": 7,
+      "text": "What was the first mosque built by Prophet Muhammad?",
+      "options": ["Masjid an-Nabawi", "Masjid al-Haram", "Masjid Quba", "Masjid al-Aqsa", "Masjid al-Qiblatayn"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 70,
+      "level": 7,
+      "text": "What is the term for independent reasoning used in Islamic jurisprudence?",
+      "options": ["Ijma", "Qiyas", "Ijtihad", "Taqlid", "Fatwa"],
+      "correctOptionIndex": 2
+    }
+  ]
+}

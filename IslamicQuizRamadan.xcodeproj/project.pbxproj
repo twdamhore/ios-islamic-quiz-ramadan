@@ -24,7 +24,16 @@
 		7785CDB15DF0CF7398DB1E13 /* valid_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = E3CDE84ABF774DBC36A65313 /* valid_questions.json */; };
 		7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC20CE11955E31C5867860C /* ScoreRecord.swift */; };
 		878EBA0C9B69565AEA07FC8E /* invalid_correct_index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */; };
-		BC94A25DA460E4453B916F29 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 61C6EF5BF171E4CB4D493AE9 /* questions.json */; };
+		BB01CCDD11EE22FF33AA0001 /* questions-level-01.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0001 /* questions-level-01.json */; };
+		BB01CCDD11EE22FF33AA0002 /* questions-level-02.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0002 /* questions-level-02.json */; };
+		BB01CCDD11EE22FF33AA0003 /* questions-level-03.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0003 /* questions-level-03.json */; };
+		BB01CCDD11EE22FF33AA0004 /* questions-level-04.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0004 /* questions-level-04.json */; };
+		BB01CCDD11EE22FF33AA0005 /* questions-level-05.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0005 /* questions-level-05.json */; };
+		BB01CCDD11EE22FF33AA0006 /* questions-level-06.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0006 /* questions-level-06.json */; };
+		BB01CCDD11EE22FF33AA0007 /* questions-level-07.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0007 /* questions-level-07.json */; };
+		BB01CCDD11EE22FF33AA0008 /* questions-level-08.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0008 /* questions-level-08.json */; };
+		BB01CCDD11EE22FF33AA0009 /* questions-level-09.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0009 /* questions-level-09.json */; };
+		BB01CCDD11EE22FF33AA0010 /* questions-level-10.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0010 /* questions-level-10.json */; };
 		C8CA4F3E3F3AB1514CA75E7D /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABECB6B0C1636052A5F968BE /* GameSession.swift */; };
 		DA2C6C6DD1A4B459FF199706 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB407769D8C6C656AC6D93 /* Player.swift */; };
 		DDF6898CA0DEE7726C901290 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE99E7465718BE65404965 /* Bundle+Decode.swift */; };
@@ -59,7 +68,16 @@
 		5EC20CE11955E31C5867860C /* ScoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRecord.swift; sourceTree = "<group>"; };
 		5F9C79DF260F13883A21FC0D /* StorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceTests.swift; sourceTree = "<group>"; };
 		603B3CDF75D67978A6837242 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		61C6EF5BF171E4CB4D493AE9 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0001 /* questions-level-01.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-01.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0002 /* questions-level-02.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-02.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0003 /* questions-level-03.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-03.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0004 /* questions-level-04.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-04.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0005 /* questions-level-05.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-05.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0006 /* questions-level-06.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-06.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0007 /* questions-level-07.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-07.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0008 /* questions-level-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-08.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0009 /* questions-level-09.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-09.json"; sourceTree = "<group>"; };
+		AA01BBCC11DD22EE33FF0010 /* questions-level-10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-10.json"; sourceTree = "<group>"; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6937F332CA8290155AC41FDD /* QuestionLoadErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoadErrorView.swift; sourceTree = "<group>"; };
 		6EA4713D261FF8D35839DBF1 /* QuestionLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoadError.swift; sourceTree = "<group>"; };
@@ -120,7 +138,16 @@
 			isa = PBXGroup;
 			children = (
 				8FCEA3B8AE954BCCB47F5E19 /* Assets.xcassets */,
-				61C6EF5BF171E4CB4D493AE9 /* questions.json */,
+				AA01BBCC11DD22EE33FF0001 /* questions-level-01.json */,
+				AA01BBCC11DD22EE33FF0002 /* questions-level-02.json */,
+				AA01BBCC11DD22EE33FF0003 /* questions-level-03.json */,
+				AA01BBCC11DD22EE33FF0004 /* questions-level-04.json */,
+				AA01BBCC11DD22EE33FF0005 /* questions-level-05.json */,
+				AA01BBCC11DD22EE33FF0006 /* questions-level-06.json */,
+				AA01BBCC11DD22EE33FF0007 /* questions-level-07.json */,
+				AA01BBCC11DD22EE33FF0008 /* questions-level-08.json */,
+				AA01BBCC11DD22EE33FF0009 /* questions-level-09.json */,
+				AA01BBCC11DD22EE33FF0010 /* questions-level-10.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,7 +335,16 @@
 			files = (
 				570E322C1942F2BDB7E2250C /* Assets.xcassets in Resources */,
 				5CC70BE6F1FA62392126C9B1 /* LaunchScreen.storyboard in Resources */,
-				BC94A25DA460E4453B916F29 /* questions.json in Resources */,
+				BB01CCDD11EE22FF33AA0001 /* questions-level-01.json in Resources */,
+				BB01CCDD11EE22FF33AA0002 /* questions-level-02.json in Resources */,
+				BB01CCDD11EE22FF33AA0003 /* questions-level-03.json in Resources */,
+				BB01CCDD11EE22FF33AA0004 /* questions-level-04.json in Resources */,
+				BB01CCDD11EE22FF33AA0005 /* questions-level-05.json in Resources */,
+				BB01CCDD11EE22FF33AA0006 /* questions-level-06.json in Resources */,
+				BB01CCDD11EE22FF33AA0007 /* questions-level-07.json in Resources */,
+				BB01CCDD11EE22FF33AA0008 /* questions-level-08.json in Resources */,
+				BB01CCDD11EE22FF33AA0009 /* questions-level-09.json in Resources */,
+				BB01CCDD11EE22FF33AA0010 /* questions-level-10.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
