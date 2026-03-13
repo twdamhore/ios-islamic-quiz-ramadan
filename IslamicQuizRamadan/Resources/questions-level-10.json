@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 91,
+      "level": 10,
+      "text": "According to the Quran (2:185), what is stated as the purpose of fasting in Ramadan?",
+      "options": ["To earn rewards", "To feel hunger", "That you may attain taqwa (God-consciousness)", "To lose weight", "To build patience"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 92,
+      "level": 10,
+      "text": "Why does Ramadan start on a different date each year in the Gregorian calendar?",
+      "options": ["Scholars choose a new date each year", "It follows the solar cycle", "It depends on the country", "The Islamic calendar is lunar, roughly 11 days shorter yearly", "It shifts due to leap years"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 93,
+      "level": 10,
+      "text": "Which verse in the Quran states that fasting was also prescribed for previous nations?",
+      "options": ["Quran 2:183", "Quran 2:185", "Quran 97:1", "Quran 3:103", "Quran 5:6"],
+      "correctOptionIndex": 0
+    },
+    {
+      "id": 94,
+      "level": 10,
+      "text": "Which companion of the Prophet was known as 'As-Siddiq' (The Truthful)?",
+      "options": ["Umar", "Uthman", "Ali", "Abu Bakr", "Khalid"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 95,
+      "level": 10,
+      "text": "If a fasting person eats or drinks by genuine forgetfulness, what is the ruling?",
+      "options": ["The fast is broken and must be made up", "The fast is broken and requires kaffarah", "The fast remains valid", "The person must restart the fast immediately", "The fast is broken but no makeup is needed"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 96,
+      "level": 10,
+      "text": "What is the 'Fidyah' in the context of Ramadan?",
+      "options": ["A special prayer for forgiveness", "A penalty for intentionally breaking the fast", "Feeding a poor person for each missed fast day", "A donation to build mosques", "An extra day of fasting after Ramadan"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 97,
+      "level": 10,
+      "text": "Why is the Islamic calendar called 'Hijri' rather than 'Muhammadi'?",
+      "options": ["It was named by the Prophet himself", "It commemorates the Hijrah, chosen by Umar as the starting point", "It refers to the word for 'moon' in Arabic", "It was named after the city of Hijr", "It was decided by consensus of all companions"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 98,
+      "level": 10,
+      "text": "How many gates does Paradise (Jannah) have according to Islamic tradition?",
+      "options": ["Four", "Seven", "Eight", "Ten", "Twelve"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 99,
+      "level": 10,
+      "text": "What is the 'Kaffarah' for intentionally breaking a Ramadan fast without valid reason?",
+      "options": ["Fasting 3 days", "Feeding 10 poor people", "Fasting 60 consecutive days or feeding 60 poor people", "Paying a fine to the mosque", "Making up only that one day"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 100,
+      "level": 10,
+      "text": "The Quran mentions that Ramadan is the month in which what was specifically revealed?",
+      "options": ["The Ten Commandments", "The Quran as guidance for humanity", "The five daily prayers", "The concept of Zakat", "The rules of Hajj"],
+      "correctOptionIndex": 1
+    }
+  ]
+}

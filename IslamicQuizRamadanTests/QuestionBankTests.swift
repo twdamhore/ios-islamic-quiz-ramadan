@@ -5,40 +5,50 @@ import Testing
 @Suite("QuestionBank JSON loading")
 struct QuestionBankTests {
 
-    let bank: QuestionBank
+    let questions: [Question]
 
     init() throws {
-        bank = try Bundle.main.decode(QuestionBank.self, from: "questions.json")
+        let result = QuestionLoader.loadAll()
+        switch result {
+        case .success(let q):
+            questions = q
+        case .failure(let error):
+            throw error
+        }
     }
 
-    @Test("questions.json contains exactly 10 questions")
+    @Test("Question files contain exactly 100 questions")
     func questionCount() {
-        #expect(bank.questions.count == 10)
+        #expect(questions.count == 100)
     }
 
     @Test("Each question has exactly 5 options")
     func optionCount() {
-        for question in bank.questions {
+        for question in questions {
             #expect(question.options.count == 5)
         }
     }
 
     @Test("correctOptionIndex is within bounds for every question")
     func correctIndexInBounds() {
-        for question in bank.questions {
+        for question in questions {
             #expect(question.options.indices.contains(question.correctOptionIndex))
         }
     }
 
     @Test("Question IDs are unique")
     func uniqueIDs() {
-        let ids = bank.questions.map(\.id)
+        let ids = questions.map(\.id)
         #expect(Set(ids).count == ids.count)
     }
 
-    @Test("Levels 1 through 10 are each represented exactly once")
+    @Test("Levels 1 through 10 each have exactly 10 questions")
     func levelCoverage() {
-        let levels = Set(bank.questions.map(\.level))
+        let levels = Set(questions.map(\.level))
         #expect(levels == Set(1...10))
+        for level in 1...10 {
+            let count = questions.filter { $0.level == level }.count
+            #expect(count == 10, "Level \(level) should have 10 questions but has \(count)")
+        }
     }
 }

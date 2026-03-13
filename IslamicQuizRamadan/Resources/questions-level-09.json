@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 81,
+      "level": 9,
+      "text": "What is the special nightly prayer performed during Ramadan called?",
+      "options": ["Ishraq", "Duha", "Tahajjud", "Taraweeh", "Istikharah"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 82,
+      "level": 9,
+      "text": "Which caliph introduced the Hijri calendar system?",
+      "options": ["Abu Bakr", "Uthman", "Ali", "Umar", "Muawiyah"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 83,
+      "level": 9,
+      "text": "What is the shortest surah in the Quran?",
+      "options": ["Al-Asr", "Al-Ikhlas", "Al-Kawthar", "Al-Nas", "Al-Falaq"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 84,
+      "level": 9,
+      "text": "Which prophet is known as 'Khalilullah' (Friend of God)?",
+      "options": ["Musa", "Isa", "Ibrahim", "Muhammad", "Nuh"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 85,
+      "level": 9,
+      "text": "In which surah is the Ayat al-Kursi (Verse of the Throne) found?",
+      "options": ["Al-Imran", "Al-Baqarah", "An-Nisa", "Al-Ma'idah", "Al-An'am"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 86,
+      "level": 9,
+      "text": "How many prophets are mentioned by name in the Quran?",
+      "options": ["15", "20", "25", "30", "33"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 87,
+      "level": 9,
+      "text": "What is the name of Prophet Muhammad's first wife?",
+      "options": ["Aisha", "Hafsa", "Khadijah", "Fatimah", "Zaynab"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 88,
+      "level": 9,
+      "text": "Which surah is recommended to be recited every Friday?",
+      "options": ["Ya-Sin", "Al-Mulk", "Al-Kahf", "Ar-Rahman", "Al-Waqi'ah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 89,
+      "level": 9,
+      "text": "What is the term for the ablution performed before prayer?",
+      "options": ["Ghusl", "Tayammum", "Wudu", "Istinja", "Miswak"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 90,
+      "level": 9,
+      "text": "What event does Eid al-Adha commemorate?",
+      "options": ["The Hijrah to Medina", "The revelation of the Quran", "Ibrahim's willingness to sacrifice his son", "The conquest of Mecca", "The Battle of Badr"],
+      "correctOptionIndex": 2
+    }
+  ]
+}

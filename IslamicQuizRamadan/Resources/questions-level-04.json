@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 31,
+      "level": 4,
+      "text": "What is the obligatory charity given at the end of Ramadan before Eid prayer called?",
+      "options": ["Zakat al-Mal", "Sadaqah", "Zakat al-Fitr", "Khums", "Waqf"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 32,
+      "level": 4,
+      "text": "Which prophet built the Kaaba with his son as described in the Quran?",
+      "options": ["Nuh", "Musa", "Ibrahim", "Dawud", "Sulaiman"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 33,
+      "level": 4,
+      "text": "What is the name of the first surah in the Quran?",
+      "options": ["Al-Baqarah", "Al-Ikhlas", "Al-Fatiha", "Al-Nas", "An-Naba"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 34,
+      "level": 4,
+      "text": "Which prophet was swallowed by a whale according to the Quran?",
+      "options": ["Dawud", "Sulaiman", "Yunus", "Idris", "Ilyas"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 35,
+      "level": 4,
+      "text": "Which prophet is mentioned most frequently in the Quran?",
+      "options": ["Ibrahim", "Isa", "Musa", "Nuh", "Muhammad"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 36,
+      "level": 4,
+      "text": "What is the night journey of Prophet Muhammad called?",
+      "options": ["Hijrah", "Isra and Mi'raj", "Laylat al-Qadr", "Mawlid", "Fatwa"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 37,
+      "level": 4,
+      "text": "Which prophet was given the Zabur (Psalms)?",
+      "options": ["Musa", "Ibrahim", "Dawud", "Isa", "Sulaiman"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 38,
+      "level": 4,
+      "text": "What is the term for the recommended but not obligatory prayers in Islam?",
+      "options": ["Fard", "Wajib", "Sunnah", "Makruh", "Haram"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 39,
+      "level": 4,
+      "text": "Which prophet is known as 'Kalimullah' (The one who spoke with God)?",
+      "options": ["Ibrahim", "Musa", "Isa", "Muhammad", "Nuh"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 40,
+      "level": 4,
+      "text": "How many juz (parts) is the Quran divided into?",
+      "options": ["20", "25", "30", "35", "40"],
+      "correctOptionIndex": 2
+    }
+  ]
+}

@@ -57,4 +57,26 @@ struct QuestionLoader {
         }
         return .success(questions)
     }
+
+    static func loadAll(from bundle: Bundle = .main) -> Result<[Question], QuestionLoadError> {
+        var allQuestions: [Question] = []
+        for level in 1...10 {
+            let file = String(format: "questions-level-%02d.json", level)
+            switch load(from: bundle, file: file) {
+            case .success(let questions):
+                allQuestions.append(contentsOf: questions)
+            case .failure(let error):
+                return .failure(error)
+            }
+        }
+
+        var seenIDs = Set<Int>()
+        for q in allQuestions {
+            guard seenIDs.insert(q.id).inserted else {
+                return .failure(.duplicateQuestionID(q.id))
+            }
+        }
+
+        return .success(allQuestions)
+    }
 }

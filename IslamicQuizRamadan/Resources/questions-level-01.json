@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": 1,
+      "text": "What is the name of the holy month in which Muslims fast from dawn to sunset?",
+      "options": ["Shawwal", "Rajab", "Ramadan", "Muharram", "Dhul Hijjah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 2,
+      "level": 1,
+      "text": "How many pillars of Islam are there?",
+      "options": ["Three", "Four", "Five", "Six", "Seven"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 3,
+      "level": 1,
+      "text": "What is the holy book of Islam called?",
+      "options": ["Torah", "Bible", "Quran", "Zabur", "Injeel"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 4,
+      "level": 1,
+      "text": "Which city do Muslims face when they pray?",
+      "options": ["Medina", "Jerusalem", "Mecca", "Cairo", "Damascus"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 5,
+      "level": 1,
+      "text": "What is the Islamic house of worship called?",
+      "options": ["Church", "Synagogue", "Temple", "Mosque", "Chapel"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 6,
+      "level": 1,
+      "text": "Who is the last prophet in Islam?",
+      "options": ["Ibrahim", "Musa", "Isa", "Muhammad", "Nuh"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 7,
+      "level": 1,
+      "text": "What is the annual pilgrimage to Mecca called?",
+      "options": ["Umrah", "Hajj", "Hijrah", "Isra", "Jihad"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 8,
+      "level": 1,
+      "text": "What is the first pillar of Islam?",
+      "options": ["Salah", "Zakat", "Shahada", "Sawm", "Hajj"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 9,
+      "level": 1,
+      "text": "What greeting do Muslims commonly use when meeting?",
+      "options": ["Masha'Allah", "Subhan'Allah", "Assalamu Alaikum", "Alhamdulillah", "Bismillah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 10,
+      "level": 1,
+      "text": "How many months are in the Islamic calendar?",
+      "options": ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen"],
+      "correctOptionIndex": 2
+    }
+  ]
+}

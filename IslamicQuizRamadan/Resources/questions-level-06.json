@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 51,
+      "level": 6,
+      "text": "Which surah of the Quran was first revealed during Ramadan?",
+      "options": ["Al-Fatiha", "Al-Baqarah", "Al-Alaq", "Al-Ikhlas", "Al-Mulk"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 52,
+      "level": 6,
+      "text": "In which month of the Islamic calendar does Hajj take place?",
+      "options": ["Ramadan", "Shawwal", "Muharram", "Dhul Hijjah", "Rajab"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 53,
+      "level": 6,
+      "text": "What is the name of the well near the Kaaba that miraculously appeared?",
+      "options": ["Al-Kawthar", "Salsabil", "Zamzam", "Tasnim", "Rahma"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 54,
+      "level": 6,
+      "text": "Which prophet is associated with the great flood in the Quran?",
+      "options": ["Ibrahim", "Musa", "Nuh", "Lut", "Hud"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 55,
+      "level": 6,
+      "text": "What is the last surah of the Quran?",
+      "options": ["Al-Falaq", "Al-Ikhlas", "An-Nas", "Al-Masad", "Al-Kawthar"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 56,
+      "level": 6,
+      "text": "Which companion of the Prophet was the first caliph?",
+      "options": ["Umar", "Uthman", "Ali", "Abu Bakr", "Khalid"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 57,
+      "level": 6,
+      "text": "What is the sacred black stone at the Kaaba called?",
+      "options": ["Maqam Ibrahim", "Hajar al-Aswad", "Rukn al-Yamani", "Hijr Ismail", "Multazam"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 58,
+      "level": 6,
+      "text": "What is the pilgrimage that can be performed at any time of the year called?",
+      "options": ["Hajj", "Umrah", "Ziyarah", "Tawaf", "Sa'i"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 59,
+      "level": 6,
+      "text": "What is the term for circling the Kaaba seven times?",
+      "options": ["Sa'i", "Tawaf", "Wuquf", "Rami", "Ihram"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 60,
+      "level": 6,
+      "text": "What is the term for food or actions that are forbidden in Islam?",
+      "options": ["Halal", "Makruh", "Mubah", "Haram", "Mustahabb"],
+      "correctOptionIndex": 3
+    }
+  ]
+}

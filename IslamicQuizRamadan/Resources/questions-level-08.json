@@ -1,0 +1,74 @@
+{
+  "questions": [
+    {
+      "id": 71,
+      "level": 8,
+      "text": "Which significant battle in Islamic history took place during Ramadan in 2 AH?",
+      "options": ["Battle of Uhud", "Battle of the Trench", "Battle of Badr", "Battle of Hunayn", "Battle of Tabuk"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 72,
+      "level": 8,
+      "text": "What is the migration of Prophet Muhammad from Mecca to Medina called?",
+      "options": ["Isra", "Fatwa", "Hijrah", "Da'wah", "Ummah"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 73,
+      "level": 8,
+      "text": "How many years did Prophet Muhammad preach in Mecca before the Hijrah?",
+      "options": ["5 years", "8 years", "10 years", "13 years", "15 years"],
+      "correctOptionIndex": 3
+    },
+    {
+      "id": 74,
+      "level": 8,
+      "text": "Which surah mentions the story of the People of the Cave (Ashab al-Kahf)?",
+      "options": ["Al-Baqarah", "Maryam", "Al-Kahf", "Al-Anbiya", "Al-Qasas"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 75,
+      "level": 8,
+      "text": "What is the name of the first muezzin (caller to prayer) in Islam?",
+      "options": ["Abu Bakr", "Umar", "Bilal ibn Rabah", "Ali", "Uthman"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 76,
+      "level": 8,
+      "text": "Which prophet could understand the language of animals according to the Quran?",
+      "options": ["Dawud", "Sulaiman", "Musa", "Idris", "Ilyas"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 77,
+      "level": 8,
+      "text": "How many times is the name 'Muhammad' mentioned in the Quran?",
+      "options": ["2 times", "3 times", "4 times", "5 times", "7 times"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 78,
+      "level": 8,
+      "text": "What was the original qibla before it was changed to the Kaaba in Mecca?",
+      "options": ["Medina", "Jerusalem", "Taif", "Yemen", "Damascus"],
+      "correctOptionIndex": 1
+    },
+    {
+      "id": 79,
+      "level": 8,
+      "text": "Which companion compiled the Quran into a single book during Abu Bakr's caliphate?",
+      "options": ["Umar ibn al-Khattab", "Ali ibn Abi Talib", "Zayd ibn Thabit", "Uthman ibn Affan", "Abdullah ibn Masud"],
+      "correctOptionIndex": 2
+    },
+    {
+      "id": 80,
+      "level": 8,
+      "text": "In which year (AH) did the Conquest of Mecca (Fath Makkah) take place?",
+      "options": ["2 AH", "4 AH", "6 AH", "8 AH", "10 AH"],
+      "correctOptionIndex": 3
+    }
+  ]
+}
