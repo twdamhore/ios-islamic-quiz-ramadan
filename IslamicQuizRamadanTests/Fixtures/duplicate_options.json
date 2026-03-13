@@ -1,0 +1,11 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "level": 1,
+      "text": "Question with duplicate options?",
+      "options": ["Alpha", "Alpha", "Charlie", "Delta", "Echo"],
+      "correctOptionIndex": 0
+    }
+  ]
+}

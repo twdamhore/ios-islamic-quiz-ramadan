@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C52A682682AF010DD2B5FD9 /* duplicate_ids.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F40A75554BBD460CDD7633 /* duplicate_ids.json */; };
 		37FB0F3F290AD10395646262 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775A23004525A49C372EF41 /* ContentView.swift */; };
+		552EC30C1FFCAEE215A52E27 /* corrupt.json in Resources */ = {isa = PBXBuildFile; fileRef = 59AA14C3C5EEA4772F4F6E53 /* corrupt.json */; };
+		55863A0E2F06A0EEC5862443 /* invalid_option_count.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B45270C15383D03A7941903 /* invalid_option_count.json */; };
 		570E322C1942F2BDB7E2250C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FCEA3B8AE954BCCB47F5E19 /* Assets.xcassets */; };
 		5B6D3F87F6715FCDDC006959 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A5005D19473CAECF110EC5 /* QuestionBank.swift */; };
 		5CC70BE6F1FA62392126C9B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 603B3CDF75D67978A6837242 /* LaunchScreen.storyboard */; };
+		6BD2D73285088FAE5E6DC00D /* duplicate_options.json in Resources */ = {isa = PBXBuildFile; fileRef = A621CB5776912245ADD526A7 /* duplicate_options.json */; };
 		6F7CD250DFC63C6197C54407 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677ED83727AD8380CA23D43D /* AppConstants.swift */; };
+		71C4454C71CDC14316DF4428 /* QuestionLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70641E32CAE057C6B151BE52 /* QuestionLoaderTests.swift */; };
+		7785CDB15DF0CF7398DB1E13 /* valid_questions.json in Resources */ = {isa = PBXBuildFile; fileRef = E3CDE84ABF774DBC36A65313 /* valid_questions.json */; };
 		7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC20CE11955E31C5867860C /* ScoreRecord.swift */; };
+		878EBA0C9B69565AEA07FC8E /* invalid_correct_index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */; };
 		BC94A25DA460E4453B916F29 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 61C6EF5BF171E4CB4D493AE9 /* questions.json */; };
 		C8CA4F3E3F3AB1514CA75E7D /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABECB6B0C1636052A5F968BE /* GameSession.swift */; };
 		DA2C6C6DD1A4B459FF199706 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB407769D8C6C656AC6D93 /* Player.swift */; };
@@ -20,6 +27,8 @@
 		E8C9857AE97E2735F44372B0 /* QuestionBankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F583839E370F51176ED373 /* QuestionBankTests.swift */; };
 		EF421FAB2215B85DAAE77656 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500514CA8ABE76CEEBA0565 /* Question.swift */; };
 		F843BF0E7A8604BFD0EA134B /* IslamicQuizRamadanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5AF24343CCA7645DFB369 /* IslamicQuizRamadanApp.swift */; };
+		F85365E4DB28F0C043BBDF34 /* QuestionLoadError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4713D261FF8D35839DBF1 /* QuestionLoadError.swift */; };
+		FCFEDE8DFF6C56DDFB7FF98E /* QuestionLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3F8EBF7905E97DE9DCA795 /* QuestionLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +47,30 @@
 		1EDE99E7465718BE65404965 /* Bundle+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		286820DD2F69AFC348849C88 /* Error */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Error; path = IslamicQuizRamadan/Views/Error; sourceTree = SOURCE_ROOT; };
 		429B59AF9C287C5DCF2786F4 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = IslamicQuizRamadan/Views/Game; sourceTree = SOURCE_ROOT; };
+		4B45270C15383D03A7941903 /* invalid_option_count.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = invalid_option_count.json; sourceTree = "<group>"; };
+		4F3F8EBF7905E97DE9DCA795 /* QuestionLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoader.swift; sourceTree = "<group>"; };
+		59AA14C3C5EEA4772F4F6E53 /* corrupt.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = corrupt.json; sourceTree = "<group>"; };
 		5EC20CE11955E31C5867860C /* ScoreRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRecord.swift; sourceTree = "<group>"; };
 		603B3CDF75D67978A6837242 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61C6EF5BF171E4CB4D493AE9 /* questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions.json; sourceTree = "<group>"; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		6EA4713D261FF8D35839DBF1 /* QuestionLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoadError.swift; sourceTree = "<group>"; };
+		70641E32CAE057C6B151BE52 /* QuestionLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoaderTests.swift; sourceTree = "<group>"; };
 		71A6E2062FF120C40AB9B349 /* Leaderboard */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Leaderboard; path = IslamicQuizRamadan/Views/Leaderboard; sourceTree = SOURCE_ROOT; };
 		72A846494E1186B987CB3CCA /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = IslamicQuizRamadan/Resources/Sounds; sourceTree = SOURCE_ROOT; };
 		748EC8F88AEB2D51431C0FC1 /* Theme */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Theme; path = IslamicQuizRamadan/Theme; sourceTree = SOURCE_ROOT; };
 		74A5005D19473CAECF110EC5 /* QuestionBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = invalid_correct_index.json; sourceTree = "<group>"; };
 		8DF5AF24343CCA7645DFB369 /* IslamicQuizRamadanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslamicQuizRamadanApp.swift; sourceTree = "<group>"; };
 		8FCEA3B8AE954BCCB47F5E19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A500514CA8ABE76CEEBA0565 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A621CB5776912245ADD526A7 /* duplicate_options.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = duplicate_options.json; sourceTree = "<group>"; };
 		ABECB6B0C1636052A5F968BE /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
-		AD9B111EDF2FB9EDFC8CC02D /* Services */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Services; path = IslamicQuizRamadan/Services; sourceTree = SOURCE_ROOT; };
 		BDBB407769D8C6C656AC6D93 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BE31DBA62EAA1CD49784916A /* Settings */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Settings; path = IslamicQuizRamadan/Views/Settings; sourceTree = SOURCE_ROOT; };
 		DA8B8DFE223EDA8F87C9E27B /* IslamicQuizRamadan.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IslamicQuizRamadan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0F40A75554BBD460CDD7633 /* duplicate_ids.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = duplicate_ids.json; sourceTree = "<group>"; };
+		E3CDE84ABF774DBC36A65313 /* valid_questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valid_questions.json; sourceTree = "<group>"; };
 		E9F583839E370F51176ED373 /* QuestionBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBankTests.swift; sourceTree = "<group>"; };
 		EE1E68CFA48E1A2C1D64245A /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ViewModels; path = IslamicQuizRamadan/ViewModels; sourceTree = SOURCE_ROOT; };
 		F775A23004525A49C372EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,8 +135,32 @@
 			isa = PBXGroup;
 			children = (
 				E9F583839E370F51176ED373 /* QuestionBankTests.swift */,
+				70641E32CAE057C6B151BE52 /* QuestionLoaderTests.swift */,
+				5E923841AAE6B079E94379B0 /* Fixtures */,
 			);
 			path = IslamicQuizRamadanTests;
+			sourceTree = "<group>";
+		};
+		5E923841AAE6B079E94379B0 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				59AA14C3C5EEA4772F4F6E53 /* corrupt.json */,
+				E0F40A75554BBD460CDD7633 /* duplicate_ids.json */,
+				A621CB5776912245ADD526A7 /* duplicate_options.json */,
+				8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */,
+				4B45270C15383D03A7941903 /* invalid_option_count.json */,
+				E3CDE84ABF774DBC36A65313 /* valid_questions.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		952C970A76498B4327650289 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4F3F8EBF7905E97DE9DCA795 /* QuestionLoader.swift */,
+				6EA4713D261FF8D35839DBF1 /* QuestionLoadError.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AD62CE4B35CDDE6610DCA8BB /* IslamicQuizRamadan */ = {
@@ -129,6 +170,7 @@
 				1BECF5B060ECE889D92600D6 /* Extensions */,
 				0ED7B97E62502CA1C87AC85F /* Models */,
 				1F10099BBC6B19FE3C7039A1 /* Resources */,
+				952C970A76498B4327650289 /* Services */,
 				4689C2D4C7A60C14ACB8180F /* Views */,
 			);
 			path = IslamicQuizRamadan;
@@ -151,7 +193,6 @@
 				286820DD2F69AFC348849C88 /* Error */,
 				429B59AF9C287C5DCF2786F4 /* Game */,
 				71A6E2062FF120C40AB9B349 /* Leaderboard */,
-				AD9B111EDF2FB9EDFC8CC02D /* Services */,
 				BE31DBA62EAA1CD49784916A /* Settings */,
 				72A846494E1186B987CB3CCA /* Sounds */,
 				748EC8F88AEB2D51431C0FC1 /* Theme */,
@@ -170,6 +211,7 @@
 			buildConfigurationList = 9636420E7E10AA910F85B2C6 /* Build configuration list for PBXNativeTarget "IslamicQuizRamadanTests" */;
 			buildPhases = (
 				3C790AA040DCB7AD2EBF7AF0 /* Sources */,
+				9406AC4B35D53958ECB68C69 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -246,6 +288,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9406AC4B35D53958ECB68C69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				552EC30C1FFCAEE215A52E27 /* corrupt.json in Resources */,
+				2C52A682682AF010DD2B5FD9 /* duplicate_ids.json in Resources */,
+				6BD2D73285088FAE5E6DC00D /* duplicate_options.json in Resources */,
+				878EBA0C9B69565AEA07FC8E /* invalid_correct_index.json in Resources */,
+				55863A0E2F06A0EEC5862443 /* invalid_option_count.json in Resources */,
+				7785CDB15DF0CF7398DB1E13 /* valid_questions.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8C9857AE97E2735F44372B0 /* QuestionBankTests.swift in Sources */,
+				71C4454C71CDC14316DF4428 /* QuestionLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +325,8 @@
 				DA2C6C6DD1A4B459FF199706 /* Player.swift in Sources */,
 				EF421FAB2215B85DAAE77656 /* Question.swift in Sources */,
 				5B6D3F87F6715FCDDC006959 /* QuestionBank.swift in Sources */,
+				F85365E4DB28F0C043BBDF34 /* QuestionLoadError.swift in Sources */,
+				FCFEDE8DFF6C56DDFB7FF98E /* QuestionLoader.swift in Sources */,
 				7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
