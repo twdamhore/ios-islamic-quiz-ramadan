@@ -5,7 +5,7 @@
 - After every `git push`, update the PR body (using `gh pr edit --body`) to reflect the current state of the PR overall, including all changes made so far.
 - After updating the PR body, comment `@claude please review this PR` on the associated pull request using `gh pr comment`.
 - After requesting the review, poll the PR review status (using `gh pr view` and `gh api` to check for new reviews/comments) until Claude finishes the review.
-- If after 5 minutes Claude has not started reviewing, re-comment `@claude please review this PR`. Retry up to 5 times (5 min apart). If after 5 retries there is still no review, comment tagging `@twdamhore` asking them to look into why `@claude` is not reviewing.
+- If after 5 minutes Claude has not started reviewing (poll every minute), re-comment `@claude please review this PR`. Retry up to 5 times (5 min apart). If after 5 retries there is still no review, comment tagging `@twdamhore` asking them to look into why `@claude` is not reviewing.
 - Once the review is complete, address **all** review items — blockers, non-blockers, and suggestions — then commit and push the fixes.
 - The push will naturally trigger another `@claude please review this PR` comment, repeating the cycle until the review passes clean.
 - A "clean review" means the review has no blockers, no non-blockers, and no suggestions — only approval.
