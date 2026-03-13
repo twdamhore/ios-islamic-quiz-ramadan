@@ -55,6 +55,10 @@ struct StorageService {
         }
         players.remove(at: index)
         savePlayers(players)
+
+        let scores = listScores().filter { $0.playerID != id }
+        saveScores(scores)
+
         return .success(())
     }
 
@@ -73,6 +77,13 @@ struct StorageService {
     func listScores() -> [ScoreRecord] {
         guard let data = defaults.data(forKey: Keys.scores) else { return [] }
         return (try? JSONDecoder().decode([ScoreRecord].self, from: data)) ?? []
+    }
+
+    // MARK: - Reset
+
+    func resetAll() {
+        defaults.removeObject(forKey: Keys.players)
+        defaults.removeObject(forKey: Keys.scores)
     }
 
     // MARK: - Private
