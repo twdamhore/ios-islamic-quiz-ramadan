@@ -1,3 +1,6 @@
+# project.yml — XcodeGen spec (source of truth for the Xcode project).
+# The generated .xcodeproj is committed so contributors can open the project
+# without installing XcodeGen. After editing this file, run: xcodegen generate
 name: IslamicQuizRamadan
 options:
   bundleIdPrefix: com.twdamhore
@@ -14,50 +17,20 @@ targets:
         excludes:
           - "**/.DS_Store"
           - "**/.gitkeep"
-      - path: IslamicQuizRamadan/Models
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/ViewModels
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Launch
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Game
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Leaderboard
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Settings
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Error
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Views/Components
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Services
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Theme
-        buildPhase: none
-        type: folder
-        optional: true
-      - path: IslamicQuizRamadan/Resources/Sounds
-        buildPhase: none
-        type: folder
-        optional: true
+      # Folder references for empty directories so they appear in Xcode's
+      # navigator. Remove each entry once the folder contains source files
+      # (XcodeGen auto-discovers them from the main sources path above).
+      - { path: IslamicQuizRamadan/Models, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/ViewModels, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Launch, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Game, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Leaderboard, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Settings, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Error, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Views/Components, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Services, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Theme, buildPhase: none, type: folder, optional: true }
+      - { path: IslamicQuizRamadan/Resources/Sounds, buildPhase: none, type: folder, optional: true }
     settings:
       base:
         INFOPLIST_KEY_UILaunchScreen_Generation: true
