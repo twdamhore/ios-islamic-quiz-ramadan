@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AnswerButtonView: View {
-    enum State: Equatable {
+    enum AnswerState: Equatable {
         case `default`
         case correct
         case wrong
@@ -9,7 +9,7 @@ struct AnswerButtonView: View {
     }
 
     let text: String
-    let state: State
+    let answerState: AnswerState
     let action: () -> Void
 
     var body: some View {
@@ -24,7 +24,7 @@ struct AnswerButtonView: View {
 
                 if let icon {
                     Image(systemName: icon)
-                        .foregroundStyle(iconColor)
+                        .foregroundStyle(textColor)
                         .font(.title3)
                 }
             }
@@ -33,11 +33,12 @@ struct AnswerButtonView: View {
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
-        .disabled(state != .default)
+        .disabled(answerState != .default)
+        .accessibilityLabel(accessibilityText)
     }
 
     private var backgroundColor: Color {
-        switch state {
+        switch answerState {
         case .default: AppColors.softTeal
         case .correct: Color.green.opacity(0.2)
         case .wrong: Color.red.opacity(0.2)
@@ -46,7 +47,7 @@ struct AnswerButtonView: View {
     }
 
     private var textColor: Color {
-        switch state {
+        switch answerState {
         case .default, .disabled: AppColors.deepPurple
         case .correct: .green
         case .wrong: .red
@@ -54,28 +55,29 @@ struct AnswerButtonView: View {
     }
 
     private var icon: String? {
-        switch state {
+        switch answerState {
         case .correct: "checkmark.circle.fill"
         case .wrong: "xmark.circle.fill"
         default: nil
         }
     }
 
-    private var iconColor: Color {
-        switch state {
-        case .correct: .green
-        case .wrong: .red
-        default: .clear
+    private var accessibilityText: String {
+        switch answerState {
+        case .default: text
+        case .correct: "Correct answer: \(text)"
+        case .wrong: "Wrong answer: \(text)"
+        case .disabled: text
         }
     }
 }
 
 #Preview {
     VStack(spacing: 12) {
-        AnswerButtonView(text: "Default answer", state: .default) {}
-        AnswerButtonView(text: "Correct answer", state: .correct) {}
-        AnswerButtonView(text: "Wrong answer", state: .wrong) {}
-        AnswerButtonView(text: "Disabled answer", state: .disabled) {}
+        AnswerButtonView(text: "Default answer", answerState: .default) {}
+        AnswerButtonView(text: "Correct answer", answerState: .correct) {}
+        AnswerButtonView(text: "Wrong answer", answerState: .wrong) {}
+        AnswerButtonView(text: "Disabled answer", answerState: .disabled) {}
     }
     .padding()
 }
