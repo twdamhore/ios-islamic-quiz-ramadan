@@ -59,7 +59,7 @@ final class QuizViewModel {
     // MARK: - Answer Handling
 
     func selectAnswer(at index: Int) {
-        guard case .answering = quizPhase else { return }
+        guard !isGameComplete, case .answering = quizPhase else { return }
         let isCorrect = index == mappedCorrectIndex
         if isCorrect {
             session.correctCount += 1
@@ -144,13 +144,13 @@ final class QuizViewModel {
         createTimerPublisher()
     }
 
-    func resumeTimer() {
+    private func resumeTimer() {
         guard session.timerResumeDate == nil else { return }
         session.timerResumeDate = Date()
         createTimerPublisher()
     }
 
-    func pauseTimer() {
+    private func pauseTimer() {
         guard let resume = session.timerResumeDate else { return }
         session.accumulatedPlayTime += Date().timeIntervalSince(resume)
         session.timerResumeDate = nil
@@ -173,9 +173,10 @@ final class QuizViewModel {
     }
 
     private func completeGame(cappedTime: TimeInterval? = nil) {
-        displayTime = cappedTime ?? liveElapsedTime
+        let finalTime = cappedTime ?? liveElapsedTime
         cancelAutoAdvance()
         pauseTimer()
+        displayTime = finalTime
         isGameComplete = true
     }
 }
