@@ -7,6 +7,10 @@ struct WelcomeView: View {
     @State private var name = ""
     @State private var errorMessage: String?
 
+    private var isNameEmpty: Bool {
+        name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
     var body: some View {
         ZStack {
             AppColors.cream
@@ -50,12 +54,19 @@ struct WelcomeView: View {
                         .background(AppColors.deepPurple)
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
-                .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                .disabled(isNameEmpty)
+                .opacity(isNameEmpty ? 0.5 : 1.0)
 
                 Spacer()
             }
             .padding(24)
             .frame(maxWidth: AppConstants.maxWidth)
+        }
+        .onTapGesture {
+            UIApplication.shared.sendAction(
+                #selector(UIResponder.resignFirstResponder),
+                to: nil, from: nil, for: nil
+            )
         }
     }
 
