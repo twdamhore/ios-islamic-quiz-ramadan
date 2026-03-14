@@ -14,6 +14,10 @@ enum QuizPhase: Equatable {
 final class QuizViewModel {
 
     let allQuestions: [Question]
+    let soundService = SoundService()
+    private let storage: StorageService
+    private let playerViewModel: PlayerViewModel
+    var appState: Binding<AppState>?
     private(set) var session = GameSession()
     private(set) var quizPhase: QuizPhase = .answering
     private(set) var currentLevelQuestions: [Question] = []
@@ -32,8 +36,14 @@ final class QuizViewModel {
         return currentLevelQuestions[session.currentQuestionIndex]
     }
 
-    init(questions: [Question]) {
+    init(
+        questions: [Question],
+        storage: StorageService = StorageService(),
+        playerViewModel: PlayerViewModel
+    ) {
         self.allQuestions = questions
+        self.storage = storage
+        self.playerViewModel = playerViewModel
         loadLevelQuestions()
         startTimer()
     }
@@ -178,5 +188,45 @@ final class QuizViewModel {
         pauseTimer()
         displayTime = finalTime
         isGameComplete = true
+        saveScore(completionTime: finalTime)
+    }
+
+    // MARK: - Level Advance
+
+    func advanceToNextLevel() {
+        guard case .levelComplete = quizPhase else { return }
+        session.currentLevel += 1
+
+        if session.currentLevel > AppConstants.totalLevels {
+            completeGame()
+            return
+        }
+
+        session.currentQuestionIndex = 0
+        loadLevelQuestions()
+        resumeTimer()
+        quizPhase = .answering
+    }
+
+    // MARK: - Quit
+
+    func quit() {
+        cancelAutoAdvance()
+        pauseTimer()
+        appState?.wrappedValue = .home
+    }
+
+    // MARK: - Score Saving
+
+    private func saveScore(completionTime: TimeInterval) {
+        guard let player = playerViewModel.currentPlayer else { return }
+        let score = ScoreRecord(
+            playerID: player.id,
+            playerName: player.name,
+            totalCorrect: session.correctCount,
+            completionTimeSeconds: completionTime,
+            date: Date()
+        )
+        storage.saveScore(score)
     }
 }
