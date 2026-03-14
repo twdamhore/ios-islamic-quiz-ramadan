@@ -2,6 +2,8 @@ import Foundation
 
 struct QuestionLoader {
 
+    static let questionsPerLevel = 10
+
     private struct RawQuestion: Codable {
         let id: Int
         let level: Int
@@ -68,6 +70,9 @@ struct QuestionLoader {
             let file = String(format: "questions-level-%02d.json", level)
             switch load(from: bundle, file: file) {
             case .success(let questions):
+                guard questions.count == questionsPerLevel else {
+                    return .failure(.invalidLevelQuestionCount(level: level, count: questions.count, expected: questionsPerLevel))
+                }
                 allQuestions.append(contentsOf: questions)
             case .failure(let error):
                 return .failure(error)

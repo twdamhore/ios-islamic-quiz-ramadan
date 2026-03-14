@@ -89,4 +89,40 @@ struct QuestionLoaderTests {
             return
         }
     }
+
+    @Test("loadAll succeeds and returns 100 questions")
+    func loadAllSuccess() {
+        let result = QuestionLoader.loadAll(from: .main)
+        guard case .success(let questions) = result else {
+            Issue.record("Expected success, got \(result)")
+            return
+        }
+        #expect(questions.count == 100)
+    }
+
+    @Test("Fails with invalidLevelQuestionCount when a level has wrong count")
+    func invalidLevelCount() throws {
+        let fm = FileManager.default
+        let tempDir = fm.temporaryDirectory.appendingPathComponent(UUID().uuidString + ".bundle")
+        try fm.createDirectory(at: tempDir, withIntermediateDirectories: true)
+        defer { try? fm.removeItem(at: tempDir) }
+
+        let fixtureURL = testBundle.url(forResource: "invalid_level_count", withExtension: "json")!
+        try fm.copyItem(at: fixtureURL, to: tempDir.appendingPathComponent("questions-level-01.json"))
+
+        let appBundle = Bundle.main
+        for level in 2...10 {
+            let name = String(format: "questions-level-%02d", level)
+            let src = appBundle.url(forResource: name, withExtension: "json")!
+            try fm.copyItem(at: src, to: tempDir.appendingPathComponent(name + ".json"))
+        }
+
+        let bundle = try #require(Bundle(url: tempDir))
+        let result = QuestionLoader.loadAll(from: bundle)
+        guard case .failure(let error) = result else {
+            Issue.record("Expected failure, got \(result)")
+            return
+        }
+        #expect(error == .invalidLevelQuestionCount(level: 1, count: 2, expected: QuestionLoader.questionsPerLevel))
+    }
 }
