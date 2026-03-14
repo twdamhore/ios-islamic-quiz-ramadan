@@ -32,7 +32,7 @@ final class QuizViewModel {
 
     // MARK: - Question Shuffling & Option Remapping
 
-    func loadLevelQuestions() {
+    private func loadLevelQuestions() {
         let level = session.currentLevel
         let levelQuestions = allQuestions.filter { $0.level == level }
         currentLevelQuestions = levelQuestions.shuffled()
@@ -40,12 +40,11 @@ final class QuizViewModel {
         prepareCurrentOptions()
     }
 
-    func prepareCurrentOptions() {
+    private func prepareCurrentOptions() {
         guard let question = currentQuestion else { return }
-        let correctAnswer = question.options[question.correctOptionIndex]
-        var options = question.options
-        options.shuffle()
-        shuffledOptions = options
-        mappedCorrectIndex = options.firstIndex(of: correctAnswer) ?? 0
+        var indexed = question.options.enumerated().map { ($0.offset, $0.element) }
+        indexed.shuffle()
+        shuffledOptions = indexed.map(\.1)
+        mappedCorrectIndex = indexed.firstIndex(where: { $0.0 == question.correctOptionIndex })!
     }
 }
