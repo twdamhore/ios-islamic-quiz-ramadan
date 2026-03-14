@@ -37,6 +37,7 @@
 		9DF059A914B23CD83806AB01 /* text_too_long.json in Resources */ = {isa = PBXBuildFile; fileRef = D02262AAC826387A7E5CB8A0 /* text_too_long.json */; };
 		AB1E9451EC09BE2CFE9F0708 /* IslamicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212D7950457D657260985627 /* IslamicHeaderView.swift */; };
 		D4B6F8A21E7C905A3B8D4E62 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E3B91C4D0F826E53C1D9F0 /* TimerView.swift */; };
+		E7A3C5F9D1B3274605A8E0F2 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5F7A9C1E3052746A8B0D2 /* StarRatingView.swift */; };
 		C8CA4F3E3F3AB1514CA75E7D /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABECB6B0C1636052A5F968BE /* GameSession.swift */; };
 		DA2C6C6DD1A4B459FF199706 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBB407769D8C6C656AC6D93 /* Player.swift */; };
 		DDF6898CA0DEE7726C901290 /* Bundle+Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE99E7465718BE65404965 /* Bundle+Decode.swift */; };
@@ -70,6 +71,7 @@
 		1EDE99E7465718BE65404965 /* Bundle+Decode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decode.swift"; sourceTree = "<group>"; };
 		212D7950457D657260985627 /* IslamicHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslamicHeaderView.swift; sourceTree = "<group>"; };
 		A7E3B91C4D0F826E53C1D9F0 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B3D5F7A9C1E3052746A8B0D2 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		2E8D5917A5F26B8A97CE1F14 /* questions-level-06.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-06.json"; sourceTree = "<group>"; };
 		355B840B7F7B60FE2CBCA42F /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
 		429B59AF9C287C5DCF2786F4 /* Game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Game; path = IslamicQuizRamadan/Views/Game; sourceTree = SOURCE_ROOT; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				212D7950457D657260985627 /* IslamicHeaderView.swift */,
+				B3D5F7A9C1E3052746A8B0D2 /* StarRatingView.swift */,
 				A7E3B91C4D0F826E53C1D9F0 /* TimerView.swift */,
 			);
 			path = Components;
@@ -432,6 +435,7 @@
 				43ECA4E79362840B03BB4D9E /* QuestionLoadErrorView.swift in Sources */,
 				FCFEDE8DFF6C56DDFB7FF98E /* QuestionLoader.swift in Sources */,
 				7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */,
+				E7A3C5F9D1B3274605A8E0F2 /* StarRatingView.swift in Sources */,
 				21AA5EA843ADEC44BE5A05ED /* StorageError.swift in Sources */,
 				F72910040F375F861F7F615E /* StorageService.swift in Sources */,
 			);
