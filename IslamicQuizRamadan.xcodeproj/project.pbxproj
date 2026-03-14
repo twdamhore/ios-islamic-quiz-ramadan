@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BC01DD11EE22FF33BF0042 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AC01CD11DE22EF33AF0042 /* AppColors.swift */; };
 		21AA5EA843ADEC44BE5A05ED /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355B840B7F7B60FE2CBCA42F /* StorageError.swift */; };
 		2C52A682682AF010DD2B5FD9 /* duplicate_ids.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F40A75554BBD460CDD7633 /* duplicate_ids.json */; };
 		37FB0F3F290AD10395646262 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F775A23004525A49C372EF41 /* ContentView.swift */; };
@@ -81,6 +82,7 @@
 		AA01BBCC11DD22EE33FF0008 /* questions-level-08.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-08.json"; sourceTree = "<group>"; };
 		AA01BBCC11DD22EE33FF0009 /* questions-level-09.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-09.json"; sourceTree = "<group>"; };
 		AA01BBCC11DD22EE33FF0010 /* questions-level-10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-10.json"; sourceTree = "<group>"; };
+		42AC01CD11DE22EF33AF0042 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppColors.swift; path = IslamicQuizRamadan/Theme/AppColors.swift; sourceTree = SOURCE_ROOT; };
 		677ED83727AD8380CA23D43D /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6937F332CA8290155AC41FDD /* QuestionLoadErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoadErrorView.swift; sourceTree = "<group>"; };
 		6EA4713D261FF8D35839DBF1 /* QuestionLoadError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLoadError.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BC01DD11EE22FF33BF0042 /* AppColors.swift in Sources */,
 				6F7CD250DFC63C6197C54407 /* AppConstants.swift in Sources */,
 				DDF6898CA0DEE7726C901290 /* Bundle+Decode.swift in Sources */,
 				37FB0F3F290AD10395646262 /* ContentView.swift in Sources */,
