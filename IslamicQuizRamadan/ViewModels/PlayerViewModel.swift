@@ -39,6 +39,12 @@ final class PlayerViewModel {
         case storageError(StorageError)
     }
 
+    func resetAll() {
+        storage.resetAll()
+        players = []
+        currentPlayerID = nil
+    }
+
     func deletePlayer(id: UUID) -> Result<Void, DeleteError> {
         if players.count <= 1 {
             return .failure(.cannotDeleteSolePlayer)

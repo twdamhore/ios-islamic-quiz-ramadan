@@ -54,6 +54,8 @@
 		D3E4F5A6B7C8D9E0F1A2B3C4 /* AnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5A6B7C8D9E0F1A2B3C4D5 /* AnswerButtonView.swift */; };
 		A6B7C8D9E0F1A2B3C4D5E6F7 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8D9E0F1A2B3C4D5E6F7A8 /* QuizView.swift */; };
 		C8D9E0F1A2B3C4D5E6F7A8B9 /* LevelCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E0F1A2B3C4D5E6F7A8B9C0 /* LevelCompleteView.swift */; };
+		A3B4C5D6E7F8A9B0C1D2E3F4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C5D6E7F8A9B0C1D2E3F4A5 /* HomeView.swift */; };
+		C5D6E7F8A9B0C1D2E3F4A5B6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E7F8A9B0C1D2E3F4A5B6C7 /* SettingsView.swift */; };
 		A0B1C2D3E4F5A6B7C8D9E0F1 /* SoundService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C2D3E4F5A6B7C8D9E0F1A2 /* SoundService.swift */; };
 		B2A3C4D5E6F708A9B0C1D2E3 /* QuizViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3E4F5A6B708C9D0E1F2A3 /* QuizViewModelTests.swift */; };
 		B9C0D1E2F3A4B5C6D7E8F9A0 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1E2F3A4B5C6D7E8F9A0B1 /* QuizViewModel.swift */; };
@@ -112,6 +114,8 @@
 		F1A2B3C4D5E6F7A8B9C0D1E2 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		E4F5A6B7C8D9E0F1A2B3C4D5 /* AnswerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonView.swift; sourceTree = "<group>"; };
 		B7C8D9E0F1A2B3C4D5E6F7A8 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		B4C5D6E7F8A9B0C1D2E3F4A5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D6E7F8A9B0C1D2E3F4A5B6C7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D9E0F1A2B3C4D5E6F7A8B9C0 /* LevelCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelCompleteView.swift; sourceTree = "<group>"; };
 		ABECB6B0C1636052A5F968BE /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		B0A78FC075D2D08564FD7AE7 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
@@ -224,10 +228,19 @@
 			isa = PBXGroup;
 			children = (
 				E4F5A6B7C8D9E0F1A2B3C4D5 /* AnswerButtonView.swift */,
+				B4C5D6E7F8A9B0C1D2E3F4A5 /* HomeView.swift */,
 				D9E0F1A2B3C4D5E6F7A8B9C0 /* LevelCompleteView.swift */,
 				B7C8D9E0F1A2B3C4D5E6F7A8 /* QuizView.swift */,
 			);
 			path = Game;
+			sourceTree = "<group>";
+		};
+		E7F8A9B0C1D2E3F4A5B6C7D8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D6E7F8A9B0C1D2E3F4A5B6C7 /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		4689C2D4C7A60C14ACB8180F /* Views */ = {
@@ -237,6 +250,7 @@
 				13C57DCC595A5C7BF51E48F4 /* Error */,
 				F5A6B7C8D9E0F1A2B3C4D5E6 /* Game */,
 				3CBCEB3FB61E3957B5FB4D00 /* Launch */,
+				E7F8A9B0C1D2E3F4A5B6C7D8 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,7 +345,6 @@
 			children = (
 				06AE88842AC347EBE103AE0B /* Components */,
 				71A6E2062FF120C40AB9B349 /* Leaderboard */,
-				BE31DBA62EAA1CD49784916A /* Settings */,
 				72A846494E1186B987CB3CCA /* Sounds */,
 				748EC8F88AEB2D51431C0FC1 /* Theme */,
 				AD62CE4B35CDDE6610DCA8BB /* IslamicQuizRamadan */,
@@ -488,7 +501,9 @@
 				FCFEDE8DFF6C56DDFB7FF98E /* QuestionLoader.swift in Sources */,
 				7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */,
 				D3E4F5A6B7C8D9E0F1A2B3C4 /* AnswerButtonView.swift in Sources */,
+				A3B4C5D6E7F8A9B0C1D2E3F4 /* HomeView.swift in Sources */,
 				C8D9E0F1A2B3C4D5E6F7A8B9 /* LevelCompleteView.swift in Sources */,
+				C5D6E7F8A9B0C1D2E3F4A5B6 /* SettingsView.swift in Sources */,
 				A6B7C8D9E0F1A2B3C4D5E6F7 /* QuizView.swift in Sources */,
 				F7A8B9C0D1E2F3A4B5C6D7E8 /* PlayerPickerView.swift in Sources */,
 				E0F1A2B3C4D5E6F7A8B9C0D1 /* ProgressBarView.swift in Sources */,
