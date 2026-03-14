@@ -25,6 +25,7 @@
 		7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC20CE11955E31C5867860C /* ScoreRecord.swift */; };
 		878EBA0C9B69565AEA07FC8E /* invalid_correct_index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */; };
 		A1B2C3D4E5F6A7B8C9D0E1F2 /* invalid_level_count.json in Resources */ = {isa = PBXBuildFile; fileRef = D1E2F3A4B5C6D7E8F9A0B1C2 /* invalid_level_count.json */; };
+		CC01DDEE22FF33AA44BB5501 /* text_too_long.json in Resources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6F7089A1B2C3D /* text_too_long.json */; };
 		BB01CCDD11EE22FF33AA0001 /* questions-level-01.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0001 /* questions-level-01.json */; };
 		BB01CCDD11EE22FF33AA0002 /* questions-level-02.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0002 /* questions-level-02.json */; };
 		BB01CCDD11EE22FF33AA0003 /* questions-level-03.json in Resources */ = {isa = PBXBuildFile; fileRef = AA01BBCC11DD22EE33FF0003 /* questions-level-03.json */; };
@@ -101,6 +102,7 @@
 		D780BD2CF5A83D5B04EC0E1F /* StorageServiceScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServiceScoreTests.swift; sourceTree = "<group>"; };
 		DA8B8DFE223EDA8F87C9E27B /* IslamicQuizRamadan.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = IslamicQuizRamadan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F40A75554BBD460CDD7633 /* duplicate_ids.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = duplicate_ids.json; sourceTree = "<group>"; };
+		F1A2B3C4D5E6F7089A1B2C3D /* text_too_long.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = text_too_long.json; sourceTree = "<group>"; };
 		E3CDE84ABF774DBC36A65313 /* valid_questions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = valid_questions.json; sourceTree = "<group>"; };
 		E9F583839E370F51176ED373 /* QuestionBankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBankTests.swift; sourceTree = "<group>"; };
 		EE1E68CFA48E1A2C1D64245A /* ViewModels */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ViewModels; path = IslamicQuizRamadan/ViewModels; sourceTree = SOURCE_ROOT; };
@@ -202,6 +204,7 @@
 				8931A2FFE469C34379D4DF93 /* invalid_correct_index.json */,
 				D1E2F3A4B5C6D7E8F9A0B1C2 /* invalid_level_count.json */,
 				4B45270C15383D03A7941903 /* invalid_option_count.json */,
+				F1A2B3C4D5E6F7089A1B2C3D /* text_too_long.json */,
 				E3CDE84ABF774DBC36A65313 /* valid_questions.json */,
 			);
 			path = Fixtures;
@@ -361,6 +364,7 @@
 				878EBA0C9B69565AEA07FC8E /* invalid_correct_index.json in Resources */,
 				A1B2C3D4E5F6A7B8C9D0E1F2 /* invalid_level_count.json in Resources */,
 				55863A0E2F06A0EEC5862443 /* invalid_option_count.json in Resources */,
+				CC01DDEE22FF33AA44BB5501 /* text_too_long.json in Resources */,
 				7785CDB15DF0CF7398DB1E13 /* valid_questions.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

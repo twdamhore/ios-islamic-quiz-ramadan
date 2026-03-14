@@ -71,6 +71,16 @@ struct QuestionLoaderTests {
         #expect(error == .fileNotFound("nonexistent.json"))
     }
 
+    @Test("Fails with questionTextTooLong when text exceeds 120 characters")
+    func textTooLong() {
+        let result = QuestionLoader.load(from: testBundle, file: "text_too_long.json")
+        guard case .failure(let error) = result else {
+            Issue.record("Expected failure, got \(result)")
+            return
+        }
+        #expect(error == .questionTextTooLong(questionID: 1, length: 160, maxLength: 120))
+    }
+
     @Test("Fails with decodingFailed for corrupt JSON")
     func corruptJSON() {
         let result = QuestionLoader.load(from: testBundle, file: "corrupt.json")
