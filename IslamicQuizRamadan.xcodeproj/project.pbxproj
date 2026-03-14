@@ -50,6 +50,7 @@
 		F2E1D0C9B8A706F5E4D3C2B1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F607A8B9C0D1E2 /* AppState.swift */; };
 		E3F2D1C0B9A807F6E5D4C3B2 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F607A8B9C0D1E2F3 /* PlayerViewModel.swift */; };
 		D4E3F2C1B0A908F7E6D5C4B3 /* PlayerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F607A8B9C0D1E2F3A4 /* PlayerViewModelTests.swift */; };
+		B9C0D1E2F3A4B5C6D7E8F9A0 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1E2F3A4B5C6D7E8F9A0B1 /* QuizViewModel.swift */; };
 		D5E6F7A8B9C0D1E2F3A4B5C6 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F7A8B9C0D1E2F3A4B5C6D7 /* WelcomeView.swift */; };
 		F7A8B9C0D1E2F3A4B5C6D7E8 /* PlayerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B9C0D1E2F3A4B5C6D7E8F9 /* PlayerPickerView.swift */; };
 		F843BF0E7A8604BFD0EA134B /* IslamicQuizRamadanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF5AF24343CCA7645DFB369 /* IslamicQuizRamadanApp.swift */; };
@@ -122,6 +123,7 @@
 		B2C3D4E5F607A8B9C0D1E2F3 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 		C3D4E5F607A8B9C0D1E2F3A4 /* PlayerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModelTests.swift; sourceTree = "<group>"; };
 		A8B9C0D1E2F3A4B5C6D7E8F9 /* PlayerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPickerView.swift; sourceTree = "<group>"; };
+		C0D1E2F3A4B5C6D7E8F9A0B1 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		E6F7A8B9C0D1E2F3A4B5C6D7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EBCA57613A1EF519C453045F /* questions-level-02.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "questions-level-02.json"; sourceTree = "<group>"; };
 		F775A23004525A49C372EF41 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C3D4E5F607A8B9C0D1E2F3 /* PlayerViewModel.swift */,
+				C0D1E2F3A4B5C6D7E8F9A0B1 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				7DCCE5D3B74313EEAA908AA8 /* ScoreRecord.swift in Sources */,
 				F7A8B9C0D1E2F3A4B5C6D7E8 /* PlayerPickerView.swift in Sources */,
 				E3F2D1C0B9A807F6E5D4C3B2 /* PlayerViewModel.swift in Sources */,
+				B9C0D1E2F3A4B5C6D7E8F9A0 /* QuizViewModel.swift in Sources */,
 				E7A3C5F9D1B3274605A8E0F2 /* StarRatingView.swift in Sources */,
 				D5E6F7A8B9C0D1E2F3A4B5C6 /* WelcomeView.swift in Sources */,
 				21AA5EA843ADEC44BE5A05ED /* StorageError.swift in Sources */,
