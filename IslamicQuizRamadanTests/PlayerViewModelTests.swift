@@ -151,6 +151,24 @@ struct PlayerViewModelTests {
         #expect(vm.players[0].id == p1.id)
     }
 
+    // MARK: - Reset
+
+    @Test("resetAll clears players and currentPlayerID")
+    func resetAllClearsState() {
+        let vm = makeViewModel()
+        _ = vm.addPlayer(name: "Ahmad")
+        _ = vm.addPlayer(name: "Fatimah")
+        vm.currentPlayerID = vm.players.first!.id
+
+        #expect(!vm.players.isEmpty)
+        #expect(vm.currentPlayerID != nil)
+
+        vm.resetAll()
+
+        #expect(vm.players.isEmpty)
+        #expect(vm.currentPlayerID == nil)
+    }
+
     // MARK: - Isolation
 
     @Test("Tests use isolated UserDefaults")

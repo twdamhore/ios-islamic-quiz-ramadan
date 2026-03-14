@@ -50,8 +50,8 @@ struct SettingsView: View {
         .alert("Are you sure?", isPresented: $showSecondConfirm) {
             Button("Delete Everything", role: .destructive) {
                 playerViewModel.resetAll()
-                dismiss()
                 appState = .onboarding
+                dismiss()
             }
             Button("Cancel", role: .cancel) {}
         } message: {

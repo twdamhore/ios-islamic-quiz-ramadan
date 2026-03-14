@@ -77,7 +77,9 @@ struct HomeView: View {
         .sheet(item: $activeSheet) { sheet in
             switch sheet {
             case .leaderboard:
-                Text("Leaderboard (coming soon)")
+                NavigationStack {
+                    Text("Leaderboard (coming soon)")
+                }
             case .switchPlayer:
                 NavigationStack {
                     PlayerPickerView(
