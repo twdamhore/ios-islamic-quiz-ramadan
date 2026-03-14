@@ -8,7 +8,7 @@ struct QuizViewModelTests {
 
     private let suiteName = "QuizViewModelTests"
 
-    private func makeTestQuestions(levels: Int = 1, perLevel: Int = 10) -> [Question] {
+    private func makeTestQuestions(levels: Int = 1, perLevel: Int = 10, correctIndex: Int? = nil) -> [Question] {
         var questions: [Question] = []
         for level in 1...levels {
             for i in 0..<perLevel {
@@ -18,7 +18,7 @@ struct QuizViewModelTests {
                     level: level,
                     text: "Q\(id)",
                     options: ["A", "B", "C", "D", "E"],
-                    correctOptionIndex: id % 5
+                    correctOptionIndex: correctIndex ?? (id % 5)
                 ))
             }
         }
@@ -26,27 +26,31 @@ struct QuizViewModelTests {
     }
 
     private func makeViewModel(
+        questions: [Question]? = nil,
         levels: Int = 1,
-        perLevel: Int = 10
-    ) -> QuizViewModel {
+        perLevel: Int = 10,
+        correctIndex: Int? = nil,
+        playerName: String = "TestPlayer"
+    ) -> (QuizViewModel, StorageService) {
         let defaults = UserDefaults(suiteName: suiteName)!
         defaults.removePersistentDomain(forName: suiteName)
         let storage = StorageService(defaults: defaults)
-        _ = storage.addPlayer(name: "TestPlayer")
+        _ = storage.addPlayer(name: playerName)
         let playerVM = PlayerViewModel(storage: storage)
         playerVM.currentPlayerID = playerVM.players.first!.id
-        return QuizViewModel(
-            questions: makeTestQuestions(levels: levels, perLevel: perLevel),
+        let vm = QuizViewModel(
+            questions: questions ?? makeTestQuestions(levels: levels, perLevel: perLevel, correctIndex: correctIndex),
             storage: storage,
             playerViewModel: playerVM
         )
+        return (vm, storage)
     }
 
     // MARK: - Scoring
 
     @Test("Correct answer increments correctCount")
     func correctAnswerIncrements() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         let correctIdx = vm.mappedCorrectIndex
         vm.selectAnswer(at: correctIdx)
         #expect(vm.session.correctCount == 1)
@@ -54,7 +58,7 @@ struct QuizViewModelTests {
 
     @Test("Incorrect answer does not increment correctCount")
     func incorrectAnswerNoIncrement() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         let wrongIdx = (vm.mappedCorrectIndex + 1) % 5
         vm.selectAnswer(at: wrongIdx)
         #expect(vm.session.correctCount == 0)
@@ -68,13 +72,7 @@ struct QuizViewModelTests {
         let originalOrder = questions.filter { $0.level == 1 }.map(\.id)
         var differentOrderSeen = false
         for _ in 0..<20 {
-            let defaults = UserDefaults(suiteName: suiteName)!
-            defaults.removePersistentDomain(forName: suiteName)
-            let storage = StorageService(defaults: defaults)
-            _ = storage.addPlayer(name: "Test")
-            let pvm = PlayerViewModel(storage: storage)
-            pvm.currentPlayerID = pvm.players.first!.id
-            let vm = QuizViewModel(questions: questions, storage: storage, playerViewModel: pvm)
+            let (vm, _) = makeViewModel(questions: questions)
             let shuffledOrder = vm.currentLevelQuestions.map(\.id)
             if shuffledOrder != originalOrder {
                 differentOrderSeen = true
@@ -86,7 +84,7 @@ struct QuizViewModelTests {
 
     @Test("Options are shuffled with correct index remapped")
     func optionsShuffledWithRemap() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         guard let question = vm.currentQuestion else {
             Issue.record("No current question")
             return
@@ -99,53 +97,19 @@ struct QuizViewModelTests {
 
     @Test("Correct answer at index 0 is properly tracked")
     func correctAtIndex0() {
-        let q = Question(id: 1, level: 1, text: "Q", options: ["A", "B", "C", "D", "E"], correctOptionIndex: 0)
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        let storage = StorageService(defaults: defaults)
-        _ = storage.addPlayer(name: "Test")
-        let pvm = PlayerViewModel(storage: storage)
-        pvm.currentPlayerID = pvm.players.first!.id
-        let vm = QuizViewModel(
-            questions: Array(repeating: q, count: 10).enumerated().map {
-                Question(id: $0.offset + 1, level: 1, text: "Q\($0.offset)", options: $0.element.options, correctOptionIndex: 0)
-            },
-            storage: storage, playerViewModel: pvm
-        )
+        let (vm, _) = makeViewModel(correctIndex: 0)
         #expect(vm.shuffledOptions[vm.mappedCorrectIndex] == "A")
     }
 
     @Test("Correct answer at index 4 is properly tracked")
     func correctAtIndex4() {
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        let storage = StorageService(defaults: defaults)
-        _ = storage.addPlayer(name: "Test")
-        let pvm = PlayerViewModel(storage: storage)
-        pvm.currentPlayerID = pvm.players.first!.id
-        let vm = QuizViewModel(
-            questions: (1...10).map {
-                Question(id: $0, level: 1, text: "Q\($0)", options: ["A", "B", "C", "D", "E"], correctOptionIndex: 4)
-            },
-            storage: storage, playerViewModel: pvm
-        )
+        let (vm, _) = makeViewModel(correctIndex: 4)
         #expect(vm.shuffledOptions[vm.mappedCorrectIndex] == "E")
     }
 
     @Test("Correct answer at middle index is properly tracked")
     func correctAtMiddleIndex() {
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        let storage = StorageService(defaults: defaults)
-        _ = storage.addPlayer(name: "Test")
-        let pvm = PlayerViewModel(storage: storage)
-        pvm.currentPlayerID = pvm.players.first!.id
-        let vm = QuizViewModel(
-            questions: (1...10).map {
-                Question(id: $0, level: 1, text: "Q\($0)", options: ["A", "B", "C", "D", "E"], correctOptionIndex: 2)
-            },
-            storage: storage, playerViewModel: pvm
-        )
+        let (vm, _) = makeViewModel(correctIndex: 2)
         #expect(vm.shuffledOptions[vm.mappedCorrectIndex] == "C")
     }
 
@@ -153,7 +117,7 @@ struct QuizViewModelTests {
 
     @Test("Double-tap is prevented by phase guard")
     func doubleTapPrevented() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         let correctIdx = vm.mappedCorrectIndex
         vm.selectAnswer(at: correctIdx)
         vm.selectAnswer(at: correctIdx)
@@ -162,7 +126,7 @@ struct QuizViewModelTests {
 
     @Test("Level complete after 10 questions")
     func levelCompleteAfter10() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         for _ in 0..<10 {
             vm.selectAnswer(at: 0)
             vm.tapNext()
@@ -177,32 +141,29 @@ struct QuizViewModelTests {
 
     @Test("Timer accumulates correctly across pause/resume")
     func timerPauseAccumulation() {
-        let vm = makeViewModel()
+        let (vm, _) = makeViewModel()
         #expect(vm.session.timerResumeDate != nil)
+
+        // Pause timer — accumulatedPlayTime should increase from 0
         vm.scenePhaseChanged(.background)
         #expect(vm.session.timerResumeDate == nil)
         let accum1 = vm.session.accumulatedPlayTime
         #expect(accum1 >= 0)
+
+        // Resume timer
         vm.scenePhaseChanged(.active)
         #expect(vm.session.timerResumeDate != nil)
+
+        // Pause again — accumulatedPlayTime should be >= previous
+        vm.scenePhaseChanged(.background)
+        #expect(vm.session.accumulatedPlayTime >= accum1)
     }
 
     // MARK: - Save on Completion
 
     @Test("Score saved on game completion")
     func scoreSavedOnCompletion() {
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        let storage = StorageService(defaults: defaults)
-        _ = storage.addPlayer(name: "Scorer")
-        let pvm = PlayerViewModel(storage: storage)
-        pvm.currentPlayerID = pvm.players.first!.id
-
-        let vm = QuizViewModel(
-            questions: makeTestQuestions(levels: 10, perLevel: 10),
-            storage: storage,
-            playerViewModel: pvm
-        )
+        let (vm, storage) = makeViewModel(levels: 10, perLevel: 10, playerName: "Scorer")
 
         for level in 1...10 {
             for _ in 0..<10 {
@@ -220,15 +181,5 @@ struct QuizViewModelTests {
         #expect(scores.count == 1)
         #expect(scores[0].playerName == "Scorer")
         #expect(scores[0].totalCorrect == 100)
-    }
-
-    // MARK: - Isolation
-
-    @Test("Tests use isolated UserDefaults")
-    func isolation() {
-        let defaults = UserDefaults(suiteName: suiteName)!
-        defaults.removePersistentDomain(forName: suiteName)
-        let storage = StorageService(defaults: defaults)
-        #expect(storage.listScores().isEmpty)
     }
 }
