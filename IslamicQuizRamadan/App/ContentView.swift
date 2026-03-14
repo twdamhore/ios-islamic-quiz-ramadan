@@ -4,6 +4,7 @@ struct ContentView: View {
     @State private var playerViewModel: PlayerViewModel
     @State private var appState: AppState
     @State private var questions: [Question]?
+    @State private var quizViewModel: QuizViewModel?
 
     init() {
         let storage = StorageService()
@@ -36,13 +37,33 @@ struct ContentView: View {
                     appState: $appState
                 )
             case .home:
-                Text("Home – \(playerViewModel.currentPlayer?.name ?? "No Player")")
+                NavigationStack {
+                    HomeView(playerViewModel: playerViewModel, appState: $appState)
+                }
             case .playing:
-                Text("Playing")
+                if let quizViewModel {
+                    QuizView(viewModel: quizViewModel)
+                }
             case .gameOver:
-                Text("Game Over")
+                if let quizViewModel {
+                    GameOverView(
+                        totalCorrect: quizViewModel.session.correctCount,
+                        completionTime: quizViewModel.displayTime,
+                        appState: $appState
+                    )
+                }
             case .loadError:
                 QuestionLoadErrorView()
+            }
+        }
+        .onChange(of: appState) { _, newState in
+            if newState == .playing, let questions {
+                let vm = QuizViewModel(
+                    questions: questions,
+                    playerViewModel: playerViewModel
+                )
+                vm.appState = $appState
+                quizViewModel = vm
             }
         }
         .onChange(of: playerViewModel.players.isEmpty) { _, isEmpty in
