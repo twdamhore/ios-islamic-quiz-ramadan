@@ -14,7 +14,7 @@ enum QuizPhase: Equatable {
 final class QuizViewModel {
 
     let allQuestions: [Question]
-    let soundService = SoundService()
+    private let soundService = SoundService()
     private let storage: StorageService
     private let playerViewModel: PlayerViewModel
     var appState: Binding<AppState>?
@@ -74,6 +74,7 @@ final class QuizViewModel {
         if isCorrect {
             session.correctCount += 1
         }
+        soundService.play(isCorrect ? .correct : .wrong)
         quizPhase = .feedback(selectedIndex: index, isCorrect: isCorrect)
         feedbackStartDate = Date()
         scheduleAutoAdvance(delay: AppConstants.answerFeedbackDelay)
@@ -202,10 +203,11 @@ final class QuizViewModel {
             return
         }
 
+        soundService.play(.levelUp)
         session.currentQuestionIndex = 0
         loadLevelQuestions()
-        resumeTimer()
         quizPhase = .answering
+        resumeTimer()
     }
 
     // MARK: - Quit
@@ -213,6 +215,7 @@ final class QuizViewModel {
     func quit() {
         cancelAutoAdvance()
         pauseTimer()
+        isGameComplete = true
         appState?.wrappedValue = .home
     }
 

@@ -1,26 +1,37 @@
 import AVFoundation
 
+enum SoundEffect: String, CaseIterable {
+    case correct
+    case wrong
+    case levelUp = "levelup"
+}
+
 @MainActor
 final class SoundService {
-    private var players: [String: AVAudioPlayer] = [:]
+    private var players: [SoundEffect: AVAudioPlayer] = [:]
 
     init() {
-        preload("correct")
-        preload("wrong")
-        preload("levelup")
+        for effect in SoundEffect.allCases {
+            preload(effect)
+        }
     }
 
-    func play(_ name: String) {
-        players[name]?.currentTime = 0
-        players[name]?.play()
+    func play(_ effect: SoundEffect) {
+        players[effect]?.currentTime = 0
+        players[effect]?.play()
     }
 
-    private func preload(_ name: String) {
-        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") ??
-              Bundle.main.url(forResource: name, withExtension: "wav") else {
+    private func preload(_ effect: SoundEffect) {
+        guard let url = Bundle.main.url(forResource: effect.rawValue, withExtension: "mp3") ??
+              Bundle.main.url(forResource: effect.rawValue, withExtension: "wav") else {
             return
         }
-        players[name] = try? AVAudioPlayer(contentsOf: url)
-        players[name]?.prepareToPlay()
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            players[effect] = player
+        } catch {
+            assertionFailure("Failed to load sound \(effect.rawValue): \(error)")
+        }
     }
 }
