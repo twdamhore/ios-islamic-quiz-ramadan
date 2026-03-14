@@ -31,11 +31,12 @@ struct ProgressBarView: View {
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("Progress: question \(current) of \(total)")
+        .accessibilityValue("\(current) of \(total)")
     }
 
     private var progress: CGFloat {
         guard total > 0 else { return 0 }
-        return min(CGFloat(current) / CGFloat(total), 1.0)
+        return min(max(CGFloat(current) / CGFloat(total), 0), 1.0)
     }
 
     private var trackColor: Color {
