@@ -8,7 +8,13 @@ final class PlayerViewModel {
     private let storage: StorageService
 
     private(set) var players: [Player] = []
-    var currentPlayerID: UUID?
+    var currentPlayerID: UUID? {
+        didSet {
+            if let currentPlayerID, !players.contains(where: { $0.id == currentPlayerID }) {
+                self.currentPlayerID = nil
+            }
+        }
+    }
 
     var currentPlayer: Player? {
         players.first { $0.id == currentPlayerID }
@@ -34,11 +40,11 @@ final class PlayerViewModel {
     }
 
     func deletePlayer(id: UUID) -> Result<Void, DeleteError> {
-        if id == currentPlayerID {
-            return .failure(.cannotDeleteCurrentPlayer)
-        }
         if players.count <= 1 {
             return .failure(.cannotDeleteSolePlayer)
+        }
+        if id == currentPlayerID {
+            return .failure(.cannotDeleteCurrentPlayer)
         }
         switch storage.deletePlayer(id: id) {
         case .success:

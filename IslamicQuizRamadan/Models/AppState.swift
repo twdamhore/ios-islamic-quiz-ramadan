@@ -1,6 +1,6 @@
 import Foundation
 
-enum AppState {
+enum AppState: Equatable, Hashable {
     case onboarding
     case playerSelection
     case home

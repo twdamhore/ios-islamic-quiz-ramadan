@@ -36,11 +36,12 @@ struct PlayerViewModelTests {
         #expect(vm.currentPlayer?.name == "Ahmad")
     }
 
-    @Test("currentPlayer returns nil for unknown ID")
-    func currentPlayerNilForUnknownID() {
+    @Test("Setting currentPlayerID to unknown UUID resets to nil")
+    func currentPlayerIDResetsForUnknownID() {
         let vm = makeViewModel()
         _ = vm.addPlayer(name: "Ahmad")
         vm.currentPlayerID = UUID()
+        #expect(vm.currentPlayerID == nil)
         #expect(vm.currentPlayer == nil)
     }
 
