@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftUI
 
 enum QuizPhase: Equatable {
     case answering
@@ -17,6 +18,8 @@ final class QuizViewModel {
     private(set) var currentLevelQuestions: [Question] = []
     private(set) var shuffledOptions: [String] = []
     private(set) var mappedCorrectIndex: Int = 0
+    private var autoAdvanceTask: Task<Void, Never>?
+    private var feedbackStartDate: Date?
 
     var currentQuestion: Question? {
         guard currentLevelQuestions.indices.contains(session.currentQuestionIndex) else {
@@ -46,5 +49,67 @@ final class QuizViewModel {
         indexed.shuffle()
         shuffledOptions = indexed.map(\.1)
         mappedCorrectIndex = indexed.firstIndex(where: { $0.0 == question.correctOptionIndex })!
+    }
+
+    // MARK: - Answer Handling
+
+    func selectAnswer(at index: Int) {
+        guard case .answering = quizPhase else { return }
+        let isCorrect = index == mappedCorrectIndex
+        if isCorrect {
+            session.correctCount += 1
+        }
+        quizPhase = .feedback(selectedIndex: index, isCorrect: isCorrect)
+        feedbackStartDate = Date()
+        scheduleAutoAdvance(delay: AppConstants.answerFeedbackDelay)
+    }
+
+    func tapNext() {
+        cancelAutoAdvance()
+        advanceAfterFeedback()
+    }
+
+    func scenePhaseChanged(_ phase: ScenePhase) {
+        if phase != .active {
+            cancelAutoAdvance()
+        } else if case .feedback = quizPhase, let start = feedbackStartDate {
+            let elapsed = Date().timeIntervalSince(start)
+            let remaining = AppConstants.answerFeedbackDelay - elapsed
+            if remaining > 0 {
+                scheduleAutoAdvance(delay: remaining)
+            } else {
+                advanceAfterFeedback()
+            }
+        }
+    }
+
+    // MARK: - Auto-Advance
+
+    private func scheduleAutoAdvance(delay: TimeInterval) {
+        cancelAutoAdvance()
+        autoAdvanceTask = Task { [weak self] in
+            try? await Task.sleep(for: .seconds(delay))
+            guard !Task.isCancelled else { return }
+            self?.advanceAfterFeedback()
+        }
+    }
+
+    private func cancelAutoAdvance() {
+        autoAdvanceTask?.cancel()
+        autoAdvanceTask = nil
+    }
+
+    private func advanceAfterFeedback() {
+        guard case .feedback = quizPhase else { return }
+        feedbackStartDate = nil
+        session.currentQuestionIndex += 1
+
+        if session.currentQuestionIndex >= AppConstants.questionsPerLevel {
+            let levelScore = session.correctCount - session.correctCountAtLevelStart
+            quizPhase = .levelComplete(levelScore: levelScore)
+        } else {
+            quizPhase = .answering
+            prepareCurrentOptions()
+        }
     }
 }
