@@ -1,3 +1,4 @@
+import Combine
 import Foundation
 import Observation
 import SwiftUI
@@ -18,8 +19,11 @@ final class QuizViewModel {
     private(set) var currentLevelQuestions: [Question] = []
     private(set) var shuffledOptions: [String] = []
     private(set) var mappedCorrectIndex: Int = 0
+    private(set) var displayTime: TimeInterval = 0
+    private(set) var isGameComplete = false
     private var autoAdvanceTask: Task<Void, Never>?
     private var feedbackStartDate: Date?
+    private var timerCancellable: AnyCancellable?
 
     var currentQuestion: Question? {
         guard currentLevelQuestions.indices.contains(session.currentQuestionIndex) else {
@@ -31,6 +35,7 @@ final class QuizViewModel {
     init(questions: [Question]) {
         self.allQuestions = questions
         loadLevelQuestions()
+        startTimer()
     }
 
     // MARK: - Question Shuffling & Option Remapping
@@ -54,7 +59,7 @@ final class QuizViewModel {
     // MARK: - Answer Handling
 
     func selectAnswer(at index: Int) {
-        guard case .answering = quizPhase else { return }
+        guard !isGameComplete, case .answering = quizPhase else { return }
         let isCorrect = index == mappedCorrectIndex
         if isCorrect {
             session.correctCount += 1
@@ -70,15 +75,20 @@ final class QuizViewModel {
     }
 
     func scenePhaseChanged(_ phase: ScenePhase) {
+        guard !isGameComplete else { return }
         if phase != .active {
             cancelAutoAdvance()
-        } else if case .feedback = quizPhase, let start = feedbackStartDate {
-            let elapsed = Date().timeIntervalSince(start)
-            let remaining = AppConstants.answerFeedbackDelay - elapsed
-            if remaining > 0 {
-                scheduleAutoAdvance(delay: remaining)
-            } else {
-                advanceAfterFeedback()
+            pauseTimer()
+        } else {
+            resumeTimer()
+            if case .feedback = quizPhase, let start = feedbackStartDate {
+                let elapsed = Date().timeIntervalSince(start)
+                let remaining = AppConstants.answerFeedbackDelay - elapsed
+                if remaining > 0 {
+                    scheduleAutoAdvance(delay: remaining)
+                } else {
+                    advanceAfterFeedback()
+                }
             }
         }
     }
@@ -102,14 +112,71 @@ final class QuizViewModel {
     private func advanceAfterFeedback() {
         guard case .feedback = quizPhase else { return }
         feedbackStartDate = nil
+
+        if liveElapsedTime >= AppConstants.maxGameTimeSeconds {
+            completeGame(cappedTime: AppConstants.maxGameTimeSeconds)
+            return
+        }
+
         session.currentQuestionIndex += 1
 
         if session.currentQuestionIndex >= AppConstants.questionsPerLevel {
             let levelScore = session.correctCount - session.correctCountAtLevelStart
+            pauseTimer()
             quizPhase = .levelComplete(levelScore: levelScore)
         } else {
             quizPhase = .answering
             prepareCurrentOptions()
         }
+    }
+
+    // MARK: - Timer
+
+    var liveElapsedTime: TimeInterval {
+        guard let resume = session.timerResumeDate else {
+            return session.accumulatedPlayTime
+        }
+        return session.accumulatedPlayTime + Date().timeIntervalSince(resume)
+    }
+
+    private func startTimer() {
+        session.timerResumeDate = Date()
+        createTimerPublisher()
+    }
+
+    private func resumeTimer() {
+        guard session.timerResumeDate == nil else { return }
+        session.timerResumeDate = Date()
+        createTimerPublisher()
+    }
+
+    private func pauseTimer() {
+        guard let resume = session.timerResumeDate else { return }
+        session.accumulatedPlayTime += Date().timeIntervalSince(resume)
+        session.timerResumeDate = nil
+        timerCancellable?.cancel()
+        timerCancellable = nil
+    }
+
+    private func createTimerPublisher() {
+        timerCancellable?.cancel()
+        timerCancellable = Timer.publish(every: 1, on: .main, in: .common)
+            .autoconnect()
+            .sink { [weak self] _ in
+                self?.updateDisplayTime()
+            }
+        updateDisplayTime()
+    }
+
+    private func updateDisplayTime() {
+        displayTime = liveElapsedTime
+    }
+
+    private func completeGame(cappedTime: TimeInterval? = nil) {
+        let finalTime = cappedTime ?? liveElapsedTime
+        cancelAutoAdvance()
+        pauseTimer()
+        displayTime = finalTime
+        isGameComplete = true
     }
 }
