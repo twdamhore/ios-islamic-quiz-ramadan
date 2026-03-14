@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var storage = StorageService()
     @State private var playerViewModel: PlayerViewModel
     @State private var appState: AppState
     @State private var questions: [Question]?
@@ -9,7 +8,6 @@ struct ContentView: View {
     init() {
         let storage = StorageService()
         let playerVM = PlayerViewModel(storage: storage)
-        _storage = State(initialValue: storage)
         _playerViewModel = State(initialValue: playerVM)
 
         switch QuestionLoader.loadAll() {
