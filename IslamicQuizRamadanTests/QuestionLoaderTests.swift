@@ -79,4 +79,26 @@ struct QuestionLoaderTests {
             return
         }
     }
+
+    @Test("loadAll succeeds and returns 100 questions")
+    func loadAllSuccess() {
+        let result = QuestionLoader.loadAll()
+        guard case .success(let questions) = result else {
+            Issue.record("Expected success, got \(result)")
+            return
+        }
+        #expect(questions.count == 100)
+    }
+
+    @Test("Fails with invalidLevelQuestionCount when a level file has wrong count")
+    func invalidLevelCount() {
+        let result = QuestionLoader.load(from: testBundle, file: "invalid_level_count.json")
+        guard case .success(let questions) = result else {
+            Issue.record("Expected fixture to load, got \(result)")
+            return
+        }
+        #expect(questions.count == 2)
+        let error = QuestionLoadError.invalidLevelQuestionCount(level: 1, count: 2, expected: 10)
+        #expect(error == .invalidLevelQuestionCount(level: 1, count: 2, expected: 10))
+    }
 }

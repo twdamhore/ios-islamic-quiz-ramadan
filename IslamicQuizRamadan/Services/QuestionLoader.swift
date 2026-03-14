@@ -64,6 +64,9 @@ struct QuestionLoader {
             let file = String(format: "questions-level-%02d.json", level)
             switch load(from: bundle, file: file) {
             case .success(let questions):
+                guard questions.count == 10 else {
+                    return .failure(.invalidLevelQuestionCount(level: level, count: questions.count, expected: 10))
+                }
                 allQuestions.append(contentsOf: questions)
             case .failure(let error):
                 return .failure(error)
