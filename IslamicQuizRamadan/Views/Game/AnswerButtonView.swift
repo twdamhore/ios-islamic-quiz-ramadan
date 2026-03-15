@@ -33,6 +33,9 @@ struct AnswerButtonView: View {
             .background(backgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: 16))
         }
+        .scaleEffect(answerState == .default ? 1.0 : 0.95)
+        .animation(.spring(response: 0.3, dampingFraction: 0.6), value: answerState)
+        .animation(.easeInOut(duration: 0.3), value: backgroundColor)
         .disabled(answerState != .default)
         .accessibilityLabel(accessibilityText)
     }

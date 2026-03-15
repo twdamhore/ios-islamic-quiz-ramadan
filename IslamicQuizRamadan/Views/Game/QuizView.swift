@@ -15,6 +15,8 @@ struct QuizView: View {
 
                 if let question = viewModel.currentQuestion {
                     questionSection(question)
+                        .id(question.id)
+                        .transition(.opacity)
                     answersSection
                 }
 
@@ -22,6 +24,7 @@ struct QuizView: View {
             }
             .padding(24)
             .frame(maxWidth: AppConstants.maxWidth)
+            .animation(.easeInOut(duration: 0.2), value: viewModel.session.currentQuestionIndex)
 
             if case .levelComplete(let levelScore) = viewModel.quizPhase {
                 LevelCompleteView(
@@ -30,8 +33,10 @@ struct QuizView: View {
                     totalLevels: AppConstants.totalLevels,
                     onContinue: { viewModel.advanceToNextLevel() }
                 )
+                .transition(.move(edge: .bottom))
             }
         }
+        .animation(.spring(response: 0.4, dampingFraction: 0.8), value: viewModel.quizPhase)
         .onChange(of: scenePhase) { _, newPhase in
             viewModel.scenePhaseChanged(newPhase)
         }

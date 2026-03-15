@@ -14,7 +14,7 @@ struct LevelCompleteView: View {
             VStack(spacing: 24) {
                 IslamicHeaderView(title: "Level \(level) Complete!")
 
-                StarRatingView(filledCount: levelScore)
+                StarRatingView(filledCount: levelScore, animated: true)
 
                 Text("\(levelScore) of \(AppConstants.questionsPerLevel) correct")
                     .font(AppFonts.body)
