@@ -13,6 +13,10 @@ struct PlayerPickerView: View {
 
     @State private var showDeleteAlert = false
     @State private var playerToDelete: Player?
+    @State private var showAddPlayer = false
+    @State private var newPlayerName = ""
+    @State private var addPlayerError: String?
+    @State private var showAddPlayerError = false
 
     var body: some View {
         ZStack {
@@ -36,6 +40,16 @@ struct PlayerPickerView: View {
                     }
                 }
 
+                if playerViewModel.players.count < AppConstants.maxPlayers {
+                    Button {
+                        showAddPlayer = true
+                    } label: {
+                        Label("Add Player", systemImage: "plus.circle.fill")
+                            .font(AppFonts.headline)
+                            .foregroundStyle(AppColors.deepPurple)
+                    }
+                }
+
                 Spacer()
             }
             .padding(24)
@@ -48,6 +62,35 @@ struct PlayerPickerView: View {
             Button("Cancel", role: .cancel) {}
         } message: { player in
             Text("Are you sure you want to delete \"\(player.name)\"? This will also remove their scores.")
+        }
+        .alert("Add Player", isPresented: $showAddPlayer) {
+            TextField("Name", text: $newPlayerName)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.words)
+            Button("Add") {
+                let result = playerViewModel.addPlayer(name: newPlayerName)
+                switch result {
+                case .success:
+                    newPlayerName = ""
+                case .failure(let error):
+                    addPlayerError = error.localizedDescription
+                    showAddPlayerError = true
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                newPlayerName = ""
+            }
+        } message: {
+            Text("Enter a name for the new player.")
+        }
+        .alert("Error", isPresented: $showAddPlayerError) {
+            Button("OK", role: .cancel) {
+                addPlayerError = nil
+            }
+        } message: {
+            if let addPlayerError {
+                Text(addPlayerError)
+            }
         }
         .toolbar {
             if mode == .switching {
