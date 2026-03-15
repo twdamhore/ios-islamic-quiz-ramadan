@@ -75,6 +75,9 @@ final class QuizViewModel {
             session.correctCount += 1
         }
         soundService.play(isCorrect ? .correct : .wrong)
+        if isCorrect {
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        }
         quizPhase = .feedback(selectedIndex: index, isCorrect: isCorrect)
         feedbackStartDate = Date()
         scheduleAutoAdvance(delay: AppConstants.answerFeedbackDelay)
@@ -134,6 +137,7 @@ final class QuizViewModel {
         if session.currentQuestionIndex >= AppConstants.questionsPerLevel {
             let levelScore = session.correctCount - session.correctCountAtLevelStart
             pauseTimer()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
             quizPhase = .levelComplete(levelScore: levelScore)
         } else {
             quizPhase = .answering
@@ -189,6 +193,7 @@ final class QuizViewModel {
         pauseTimer()
         displayTime = finalTime
         isGameComplete = true
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
         saveScore(completionTime: finalTime)
     }
 
