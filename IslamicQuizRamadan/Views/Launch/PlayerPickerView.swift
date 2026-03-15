@@ -13,6 +13,9 @@ struct PlayerPickerView: View {
 
     @State private var showDeleteAlert = false
     @State private var playerToDelete: Player?
+    @State private var showAddPlayer = false
+    @State private var newPlayerName = ""
+    @State private var addPlayerError: String?
 
     var body: some View {
         ZStack {
@@ -36,6 +39,16 @@ struct PlayerPickerView: View {
                     }
                 }
 
+                if playerViewModel.players.count < AppConstants.maxPlayers {
+                    Button {
+                        showAddPlayer = true
+                    } label: {
+                        Label("Add Player", systemImage: "plus.circle.fill")
+                            .font(AppFonts.headline)
+                            .foregroundStyle(AppColors.deepPurple)
+                    }
+                }
+
                 Spacer()
             }
             .padding(24)
@@ -48,6 +61,31 @@ struct PlayerPickerView: View {
             Button("Cancel", role: .cancel) {}
         } message: { player in
             Text("Are you sure you want to delete \"\(player.name)\"? This will also remove their scores.")
+        }
+        .alert("Add Player", isPresented: $showAddPlayer) {
+            TextField("Name", text: $newPlayerName)
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.words)
+            Button("Add") {
+                let result = playerViewModel.addPlayer(name: newPlayerName)
+                switch result {
+                case .success:
+                    newPlayerName = ""
+                    addPlayerError = nil
+                case .failure(let error):
+                    addPlayerError = error.localizedDescription
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                newPlayerName = ""
+                addPlayerError = nil
+            }
+        } message: {
+            if let addPlayerError {
+                Text(addPlayerError)
+            } else {
+                Text("Enter a name for the new player.")
+            }
         }
         .toolbar {
             if mode == .switching {
