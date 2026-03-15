@@ -78,7 +78,9 @@ struct HomeView: View {
             switch sheet {
             case .leaderboard:
                 NavigationStack {
-                    Text("Leaderboard (coming soon)")
+                    LeaderboardView(
+                        currentPlayerID: playerViewModel.currentPlayerID
+                    )
                 }
             case .switchPlayer:
                 NavigationStack {
