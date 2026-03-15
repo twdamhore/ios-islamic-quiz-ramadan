@@ -16,6 +16,7 @@ struct PlayerPickerView: View {
     @State private var showAddPlayer = false
     @State private var newPlayerName = ""
     @State private var addPlayerError: String?
+    @State private var showAddPlayerError = false
 
     var body: some View {
         ZStack {
@@ -71,20 +72,24 @@ struct PlayerPickerView: View {
                 switch result {
                 case .success:
                     newPlayerName = ""
-                    addPlayerError = nil
                 case .failure(let error):
                     addPlayerError = error.localizedDescription
+                    showAddPlayerError = true
                 }
             }
             Button("Cancel", role: .cancel) {
                 newPlayerName = ""
+            }
+        } message: {
+            Text("Enter a name for the new player.")
+        }
+        .alert("Error", isPresented: $showAddPlayerError) {
+            Button("OK", role: .cancel) {
                 addPlayerError = nil
             }
         } message: {
             if let addPlayerError {
                 Text(addPlayerError)
-            } else {
-                Text("Enter a name for the new player.")
             }
         }
         .toolbar {
